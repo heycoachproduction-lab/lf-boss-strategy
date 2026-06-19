@@ -1,0 +1,2653 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LF BOSS — Стратегія виходу на ринок RCIC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--lime:#C8FF3E;--warm:#FAF9F5;--dark:#111110;--ink:#1a1a18;--muted:#6f6e68;--line:#e7e4db;--card:#ffffff;--lime-soft:#eaffb8;--shadow:0 1px 2px rgba(17,17,16,.04),0 8px 24px rgba(17,17,16,.06)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--warm);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,.font-display{font-family:'Manrope','Inter',sans-serif;font-weight:800;letter-spacing:-.02em;line-height:1.1;color:var(--dark)}
+h2{font-size:clamp(1.6rem,3.4vw,2.5rem);margin-bottom:.6rem}
+h3{font-size:clamp(1.15rem,2vw,1.5rem);font-weight:700;margin:1.4rem 0 .5rem}
+h4{font-size:1.02rem;font-weight:700;margin:.9rem 0 .3rem}
+p{margin-bottom:.9rem}p:last-child{margin-bottom:0}
+a{color:inherit}
+strong{font-weight:700;color:var(--dark)}
+.wrap{display:flex;max-width:1280px;margin:0 auto}
+.nav{position:sticky;top:0;align-self:flex-start;width:268px;height:100vh;overflow-y:auto;padding:28px 18px;border-right:1px solid var(--line);background:var(--warm);flex-shrink:0}
+.nav .brand{font-family:'Manrope';font-weight:800;font-size:1.05rem;color:var(--dark);margin-bottom:4px}
+.nav .brand b{background:var(--lime);padding:0 6px;border-radius:5px}
+.nav .sub{font-size:.74rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:18px}
+.nav a{display:block;font-size:.84rem;color:var(--muted);text-decoration:none;padding:7px 10px;border-radius:8px;margin-bottom:1px;transition:.15s}
+.nav a:hover{background:var(--lime-soft);color:var(--dark)}
+.nav a .n{display:inline-block;width:22px;color:#b9b6ac;font-weight:600}
+.main{flex:1;min-width:0;padding:0 clamp(20px,4vw,56px)}
+.section{padding:54px 0;border-bottom:1px solid var(--line)}
+.section:last-child{border-bottom:none}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:14px}
+.eyebrow .dot{width:8px;height:8px;background:var(--lime);border-radius:50%}
+.hero{background:var(--dark);color:var(--warm);border-radius:22px;padding:clamp(30px,5vw,60px);margin:32px 0 8px}
+.hero h1{color:var(--warm);font-size:clamp(2rem,5vw,3.4rem);margin-bottom:18px}
+.hero h1 .hl{color:var(--lime)}
+.hero p{color:#c9c7c0;font-size:1.08rem;max-width:62ch}
+.hero .kpis{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px}
+.hero .kpi{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:14px 18px}
+.hero .kpi b{display:block;font-family:'Manrope';font-size:1.7rem;font-weight:800;color:var(--lime)}
+.hero .kpi span{font-size:.8rem;color:#a9a7a0}
+.lead{font-size:1.12rem;color:var(--ink);max-width:68ch}
+.grid{display:grid;gap:16px;margin:18px 0}
+.grid.c2{grid-template-columns:repeat(2,1fr)}.grid.c3{grid-template-columns:repeat(3,1fr)}.grid.c4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
+.card h4{margin-top:0}
+.card .ico{font-size:1.4rem;margin-bottom:8px;display:block}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
+.stat b{display:block;font-family:'Manrope';font-size:2.1rem;font-weight:800;color:var(--dark);line-height:1}
+.stat b .u{font-size:1rem;color:var(--muted)}
+.stat span{font-size:.85rem;color:var(--muted);display:block;margin-top:6px}
+.accent{background:var(--lime);border-radius:16px;padding:22px;color:var(--dark)}
+.accent h4{color:var(--dark)}
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.9rem;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+thead th{background:var(--dark);color:var(--warm);text-align:left;padding:12px 14px;font-family:'Manrope';font-weight:700;font-size:.82rem}
+td,tbody th{padding:11px 14px;border-top:1px solid var(--line);text-align:left;vertical-align:top}
+tbody tr:nth-child(even){background:#faf9f3}
+.callout{border-radius:14px;padding:18px 20px;margin:18px 0;border-left:4px solid var(--lime);background:var(--lime-soft)}
+.callout.warn{border-left-color:#e8553a;background:#fdeee9}
+.callout.dark{border-left-color:var(--lime);background:var(--dark);color:var(--warm)}
+.callout.dark strong{color:var(--lime)}
+.callout .t{font-weight:700;font-family:'Manrope';margin-bottom:4px;display:block}
+.ladder{display:flex;flex-direction:column;gap:10px;margin:18px 0}
+.rung{display:grid;grid-template-columns:84px 1fr;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow)}
+.rung .lvl{font-family:'Manrope';font-weight:800;font-size:.8rem;color:var(--dark);background:var(--lime);border-radius:9px;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px}
+.timeline{display:flex;flex-direction:column;gap:0;margin:18px 0;border-left:2px solid var(--line);padding-left:24px}
+.phase{position:relative;padding:0 0 28px}
+.phase::before{content:'';position:absolute;left:-31px;top:3px;width:14px;height:14px;background:var(--lime);border:3px solid var(--warm);border-radius:50%}
+.phase .ph{font-family:'Manrope';font-weight:800;color:var(--dark);font-size:1.05rem}
+.phase .days{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+.pill{display:inline-block;background:var(--dark);color:var(--warm);font-size:.74rem;font-weight:600;padding:3px 10px;border-radius:100px;margin:0 4px 4px 0}
+.pill.lime{background:var(--lime);color:var(--dark)}
+ul.clean,ol.clean{margin:8px 0 12px;padding-left:20px}
+ul.clean li,ol.clean li{margin-bottom:6px}
+.check{list-style:none;padding-left:0}
+.check li{position:relative;padding-left:28px;margin-bottom:8px}
+.check li::before{content:'\2713';position:absolute;left:0;top:0;color:#2f9e44;font-weight:800}
+.footer{padding:40px 0 60px;color:var(--muted);font-size:.85rem}
+.footer b{background:var(--lime);color:var(--dark);padding:0 6px;border-radius:5px;font-family:'Manrope'}
+.mobtog{display:none}
+@media(max-width:900px){
+ .nav{position:fixed;left:-100%;z-index:50;width:80%;max-width:300px;transition:.25s;box-shadow:0 0 40px rgba(0,0,0,.2)}
+ .nav.open{left:0}
+ .mobtog{display:flex;position:fixed;top:14px;right:14px;z-index:60;background:var(--dark);color:var(--lime);border:none;border-radius:12px;width:46px;height:46px;font-size:1.4rem;align-items:center;justify-content:center;cursor:pointer}
+ .main{padding:0 18px}
+ .grid.c2,.grid.c3,.grid.c4{grid-template-columns:1fr}
+ .rung{grid-template-columns:1fr}
+ table{font-size:.82rem;display:block;overflow-x:auto}
+}
+@media print{.nav,.mobtog{display:none}.main{padding:0}.section{page-break-inside:avoid}}
+</style>
+<style>.nav-group{font-family:'Manrope';font-weight:800;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--dark);padding:18px 10px 6px;margin-top:6px;border-top:1px solid var(--line)}.nav-group:first-of-type{border-top:none;margin-top:0}.nav a.active{background:var(--lime-soft);color:var(--dark);font-weight:600}</style>
+<meta name="robots" content="noindex,nofollow"></head>
+<body>
+<button class="mobtog" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
+<div class="wrap"><nav class="nav"><div class="brand">LF <b>BOSS</b></div><div class="sub">Market-Entry Strategy · RCIC Canada</div>
+<div class="nav-group">⭐ КОРОТКО — 5 ХВ</div>
+<a href="#s-what"><span class="n">1</span>Що таке LF BOSS</a>
+<a href="#s-problem"><span class="n">2</span>Проблема</a>
+<a href="#s-solution"><span class="n">3</span>Рішення (клин)</a>
+<a href="#s-model"><span class="n">4</span>Модель B2B2C</a>
+<a href="#s-market"><span class="n">5</span>Ринок</a>
+<a href="#s-plan3"><span class="n">6</span>План у 3 кроки</a>
+<a href="#s-now"><span class="n">7</span>Зараз</a>
+<a href="#s-money"><span class="n">8</span>Економіка</a>
+<a href="#s-who"><span class="n">9</span>Хто що робить</a>
+<a href="#s-next"><span class="n">10</span>Наступний крок</a>
+<div class="nav-group">🛠 ПРОДУКТ</div>
+<a href="#product"><span class="n">11</span>Продукт — чим домінуємо</a>
+<a href="#proof"><span class="n">12</span>Соціальний доказ</a>
+<a href="#siteconv"><span class="n">13</span>Сайт: апгрейди</a>
+<div class="nav-group">📊 ДОСЛІДЖЕННЯ</div>
+<a href="#executive"><span class="n">14</span>Резюме</a>
+<a href="#market"><span class="n">15</span>Ринок і аудиторія</a>
+<a href="#ladder"><span class="n">16</span>Сходи Бена Ханта</a>
+<a href="#competitors"><span class="n">17</span>Конкуренти</a>
+<a href="#positioning"><span class="n">18</span>Позиціювання</a>
+<a href="#offer"><span class="n">19</span>Оффер + реф-кіт</a>
+<a href="#calculator"><span class="n">20</span>🧮 ROI-калькулятор</a>
+<div class="nav-group">🎯 ПЛАН ДІЙ</div>
+<a href="#plan"><span class="n">21</span>90-денний план</a>
+<a href="#level1"><span class="n">22</span>Рівень 1 · теплі</a>
+<a href="#level15"><span class="n">23</span>Рівень 1.5 · guerrilla</a>
+<a href="#level2"><span class="n">24</span>Рівень 2 · відео</a>
+<a href="#level3"><span class="n">25</span>Рівень 3 · реклама+UGC</a>
+<a href="#replication"><span class="n">26</span>Двигун реплікації</a>
+<a href="#seo"><span class="n">27</span>SEO / GEO</a>
+<a href="#team"><span class="n">28</span>Хто що робить</a>
+<a href="#risks"><span class="n">29</span>Що тримати в умі</a>
+</nav><main class="main">
+<section class="section" id="hero">
+  <div class="hero">
+    <h1>LF BOSS — <span class="hl">єдиний клин</span> між RCIC і платящим клієнтом:<br>квіз → депозит → ретейнер. Один цикл.</h1>
+    <p>11 994 ліцензованих RCIC у Канаді. Кожен з них витрачає 30–60 хвилин на безкоштовні дзвінки, щоб потім не отримати нічого. Ми поставили двері там, де їх не було: до першого дзвінка. Officio і Maple навіть не починаються в цій точці.</p>
+    <div class="kpis">
+      <div class="kpi"><b>11 994</b><span>RCIC у good standing (CICC 2025)</span></div>
+      <div class="kpi"><b>перші платящі</b><span>ціль 90 днів — доведений клин</span></div>
+      <div class="kpi"><b>1 цикл</b><span>квіз → депозит → ретейнер → авто-догон</span></div>
+      <div class="kpi"><b>~$300–500</b><span>весь кеш-кост, нуль реклами</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="s-what">
+  <span class="eyebrow"><span class="dot"></span>1 · Що таке LF BOSS</span>
+  <h2>Система, що доводить ліда RCIC до грошей на рахунку — за один цикл.</h2>
+  <p class="lead">Уявіть: лід зайшов на сайт, пройшов квіз, залишив депозит — і тільки після цього потрапив у ваш календар. Ніяких безкоштовних розмов на пів години. Ніякого Excel з лідами, які «подумають». Гроші на рахунку ще до першого слова.</p>
+  <div class="grid c3">
+    <div class="stat"><b>1</b><span>цикл замість хаосу</span></div>
+    <div class="stat"><b>0</b><span>безкоштовних консультацій</span></div>
+    <div class="stat"><b>$</b><span>гроші на рахунку до дзвінка</span></div>
+  </div>
+</section>
+
+<section class="section" id="s-problem">
+  <span class="eyebrow"><span class="dot"></span>2 · Проблема</span>
+  <h2>Безкоштовні консультації крадуть час і гроші.</h2>
+  <p class="lead">RCIC витрачає 5+ годин на тиждень на дзвінки з людьми, які ніколи не стануть клієнтами. Не тому що вони погані сейлси — а тому що система дозволяє tire-kicker'ам займати чергу без будь-якої ціни входу.</p>
+  <div class="grid c3">
+    <div class="stat"><b>5+</b><span>год/тиждень втрат</span></div>
+    <div class="stat"><b>$500–750</b><span>втрат на місяць</span></div>
+    <div class="stat"><b>0</b><span>гарантії оплати</span></div>
+  </div>
+</section>
+
+<section class="section" id="s-solution">
+  <span class="eyebrow"><span class="dot"></span>3 · Рішення = клин</span>
+  <h2>Депозит ДО дзвінка. Один цикл, якого нема ні в кого.</h2>
+  <p class="lead">Квіз → депозит → інвойс → авто-догон. Це не просто «форма на сайті» — це фільтр. Хто платить депозит, той серйозний. Хто не платить — не займає ваш час. Один зчеплений flow, якого нема ні в Officio, ні в Maple, ні в ScoreApp.</p>
+  <div class="grid c3">
+    <span class="pill lime">Квіз</span>
+    <span class="pill lime">Депозит</span>
+    <span class="pill lime">Інвойс</span>
+    <span class="pill lime">Авто-догон</span>
+  </div>
+</section>
+
+<section class="section" id="s-model">
+  <span class="eyebrow"><span class="dot"></span>4 · Модель B2B2C</span>
+  <h2>Заходимо через партнерів — вони розносять продукт.</h2>
+  <p class="lead">Ми не будуємо армію сейлсів і не запускаємо рекламу. Ми знаходимо людей, яким LF BOSS допомагає — і вони самі несуть його далі. Svitlana — перший такий партнер. Коли вона каже «ця система змінила мій бізнес», інші RCIC слухають. Це і є двигун: один доведений партнер → багато клієнтів.</p>
+  <div class="grid c3">
+    <div class="card">Ми → партнеру</div>
+    <div class="card">Партнер → своїм клієнтам</div>
+    <div class="card">Зростання без реклами</div>
+  </div>
+</section>
+
+<section class="section" id="s-market">
+  <span class="eyebrow"><span class="dot"></span>5 · Ринок</span>
+  <h2>Майже 12 000 RCIC у Канаді — і їх більшає щороку.</h2>
+  <p class="lead">Ринок росте сам. Нам достатньо невеликого ядра, щоб вийти в плюс.</p>
+  <div class="grid c3">
+    <div class="stat"><b>11 994</b><span>RCIC у Канаді</span></div>
+    <div class="stat"><b>+470</b><span>нових на рік</span></div>
+    <div class="stat"><b>~6 500</b><span>активне ядро</span></div>
+  </div>
+</section>
+
+<section class="section" id="s-plan3">
+  <span class="eyebrow"><span class="dot"></span>6 · План у 3 кроки</span>
+  <h2>Спочатку продукт. Потім партнери. Потім маркетинг.</h2>
+  <p class="lead">Правило просте: нічого не запускаємо, поки попереднє не доведено. Спочатку продукт без дірок. Потім перші партнери — через тепло, не холодно. Потім масштаб. Не навпаки.</p>
+  <div class="grid c3">
+    <div class="card"><b>1.</b> Полагодити продукт</div>
+    <div class="card"><b>2.</b> Теплі партнери</div>
+    <div class="card"><b>3.</b> Активний маркетинг</div>
+  </div>
+</section>
+
+<section class="section" id="s-now">
+  <span class="eyebrow"><span class="dot"></span>7 · Зараз — Перший крок</span>
+  <h2>Перший крок: доводимо сайт і відгуки до ладу.</h2>
+  <p class="lead">Оновити соц-доказ на реальні (consented) відгуки, відполірувати сайт, зробити навчальне відео + відео в платформі «2 хв». Готовий продукт — фундамент будь-якого outreach.</p>
+  <div class="callout">Спочатку доводимо продукт до ладу, потім вмикаємо outreach.</div>
+</section>
+
+<section class="section" id="s-money">
+  <span class="eyebrow"><span class="dot"></span>8 · Гроші</span>
+  <h2>Дешево перевірити клин — дорого масштабувати.</h2>
+  <p class="lead">Ціль не швидкий дохід на 90 днів. Ціль — доведений клин: перші платящі RCIC, реальні (consented) відгуки, база партнерів. Апсайд — великий. Кеш-кост — мінімальний.</p>
+  <div class="grid c3">
+    <div class="stat"><b>~$300–500</b><span>весь кеш-кост (тільки інструменти)</span></div>
+    <div class="stat"><b>$0</b><span>на рекламу</span></div>
+    <div class="stat"><b>8–10</b><span>відгуків — головний актив після 90 днів</span></div>
+  </div>
+</section>
+
+<section class="section" id="s-who">
+  <span class="eyebrow"><span class="dot"></span>9 · Хто що робить</span>
+  <h2>Троє людей — три зони. Без перетинів.</h2>
+  <p class="lead">Кожен веде свою частину, тому рухаємось швидко.</p>
+  <div class="grid c3">
+    <div class="card"><b>Маркетинг-сторона</b> — стратегія + outreach</div>
+    <div class="card"><b>Svitlana</b> — перший партнер + голос</div>
+    <div class="card"><b>Vitaly</b> — фікси продукту</div>
+  </div>
+</section>
+
+<section class="section" id="s-next">
+  <span class="eyebrow"><span class="dot"></span>10 · Наступний крок</span>
+  <h2>Перший крок: доводимо сайт і відгуки до ладу. Продукт — на старті.</h2>
+  <p class="lead">Оновити соц-доказ на реальні (consented) відгуки та відполірувати «Get Started» — це перший крок. Решту беремо на себе.</p>
+  <div class="callout accent">Vitaly: оновити соц-доказ + Get Started → 14 днів.</div>
+</section>
+
+<section class="section" id="product">
+  <span class="eyebrow"><span class="dot"></span>11 · ПРОДУКТ — ЩО МИ РОБИМО І ЧИМ ДОМІНУЄМО</span>
+  <h2>Продукт: володіємо повним циклом «лід → гроші на рахунку»</h2>
+
+  <p class="lead">LF BOSS — не «ще один CRM». Це система, що доводить ліда RCIC до грошей у <strong>ОДНОМУ циклі</strong>: intake-квіз → депозит <strong>ДО</strong> дзвінка → ретейнер-інвойс → авто-догон несплат. Жоден конкурент не пакує всі <strong>4</strong> кроки в одному потоці. Officio, Maple та решта стартують <strong>ПІСЛЯ</strong> підписання — тобто беруться за справу, коли гроші вже обіцяні. Ми володіємо саме тим відрізком, де гроші реально з'являються на рахунку.</p>
+
+  <h3>Чим домінуємо (get-paid цикл)</h3>
+
+  <div class="grid c2">
+    <div class="card">
+      <h4>1 · Quiz-to-Cash — єдиний guided flow</h4>
+      <p>Від «мені цікаво» до «гроші впали на Stripe» — <strong>один</strong> безшовний потік, не набір розрізнених модулів, які юзер збирає сам. Лід заходить у квіз і виходить платящим клієнтом без жодного ручного містка між кроками.</p>
+    </div>
+    <div class="card">
+      <h4>2 · Авто-dunning — вбиває біль №1</h4>
+      <p>Найбільший біль RCIC — <strong>отримати гроші</strong>, а не виставити інвойс. Система сама доганяє несплати: нагадування, повторні спроби списання, ескалація. Без ручної пошти, без «забув нагадати», без втрачених ретейнерів.</p>
+    </div>
+    <div class="card">
+      <h4>3 · Депозит ДО дзвінка — відсіює tire-kickers</h4>
+      <p>Платна броня <strong>~$30–40 CAD (встановлює сам RCIC, уточнити)</strong> до першого call. Хто не готовий внести депозит — не витрачає 45 хвилин консультанта. Кожен дзвінок — уже з оплаченим наміром. Це не «ще одна фіча» — це фільтр, що змінює економіку практики.</p>
+    </div>
+    <div class="card">
+      <h4>4 · Pay-per-operation — низький поріг</h4>
+      <p>Кредити, <strong>no wallet</strong>, без підписки. Платиш за операцію, а не за «місячний доступ, який забув відмінити». Поріг входу мінімальний: спробував — заплатив за реальну дію — побачив гроші. Жодного ризику «купив і не користуюсь».</p>
+    </div>
+  </div>
+
+  <h3>Що будуємо/лагодимо, щоб домінувати</h3>
+
+  <ul class="check">
+    <li><strong>Quiz-to-Cash flow</strong> — зшити розрізнені модулі в один guided потік «квіз → депозит → ретейнер → догон».</li>
+    <li><strong>Авто-dunning</strong> — реальний payment-chasing, без нього «авто-догон» = ручна пошта.</li>
+    <li><strong>RCIC-шаблон інтейку</strong> — compliant intake під вертикаль (Express Entry / PNP / spousal / study-permit), дисклеймер «intake only, not immigration advice».</li>
+    <li><strong>Відео-онбординг «2 хв»</strong> — вбиває blank-state churn: <strong>84%</strong> юзерів кидають продукт на порожньому дашборді. Перший квіз live за &lt;15 хв.</li>
+    <li><strong>Оновити соціальний доказ + полагодити Get Started</strong> — trust-gate: замінити placeholder-відгуки реальними (consented), кнопка веде на реальний акаунт, а не на $5-paywall чужого демо.</li>
+  </ul>
+
+  <div class="accent">
+    <h4>Теза, яку треба завчити</h4>
+    <p>«Officio веде ваші справи — <strong>LF BOSS наповнює їх платящими</strong>. Ми володіємо тим єдиним кроком, що приносить гроші, якого нема ні в кого.»</p>
+  </div>
+
+  <div class="callout">
+    <span class="t">Модель монетизації — коротко</span>
+    <p>Pay-per-operation на <strong>кредитах</strong>, без підписки: <strong>75 кредитів ≈ $56</strong>. Платиш за операцію — не за місяць. Низький поріг входу, нуль «забув відмінити», ціна прив'язана до реальної дії, що приносить гроші.</p>
+  </div>
+</section>
+
+<section class="section" id="proof">
+  <span class="eyebrow"><span class="dot"></span>12 · Двигун доказів і довіри</span>
+  <h2>Систематично будуємо неспростовний соціальний доказ</h2>
+  <p class="lead">Перший крок — оновити соціальний доказ: замінити поточні placeholder-відгуки реальними (з письмовою згодою учасників) і побудувати систему, де кожен новий доказ сильніший за попередній. У trust-ніші справжні відгуки — це фундамент, без якого решта маркетингу не конвертує.</p>
+
+  <div class="callout warn">
+    <span class="t">Перший крок: посилити довіру реальними відгуками</span>
+    <p>Leadfilter.ca і lfboss.com: замінюємо поточні текстові placeholder-відгуки на реальні відгуки від реальних RCIC з письмовою згодою (consented testimonials). Це стандартна підготовча робота перед будь-яким B2B outreach у регульованих нішах — і вона дає нам набагато сильнішу позицію з першого дня.</p>
+  </div>
+
+  <div class="grid c2">
+    <div class="card">
+      <span class="ico">🎥</span>
+      <h4>Відео-відгуки founding-партнерів</h4>
+      <p>Замість стокових імен — реальні RCIC на камері. Ідентифікація: ім'я, номер ліцензії CICC, місто. Тривалість 60–90 сек: <strong>що болів → що спробував → що змінилось</strong>. Без обіцянок доходу чи успіху клієнтів (CICC Code). Письмова згода за шаблоном (written-approval form у offer kit). Розміщення: окрема /testimonials сторінка + embed на лендингу.</p>
+    </div>
+    <div class="card">
+      <span class="ico">💳</span>
+      <h4>«Стіна депозитів» — Stripe скріни</h4>
+      <p>Реальні транзакції у Stripe Dashboard (сума + дата + маска картки) з письмовим дозволом оператора. Aggregate view: <strong>«X депозитів отримано через LF BOSS за перші 30 днів»</strong>. Це не підроблюється — Stripe dashboard має свій look, аудиторія знає. Публікується як rolling counter на сайті або у LinkedIn-пості щомісяця.</p>
+    </div>
+    <div class="card">
+      <span class="ico">🏛</span>
+      <h4>Trust-сторінка: клієнтські гроші</h4>
+      <p>RCIC-ядро заперечення: «якщо клієнтський депозит пройде через вашу платформу — я порушую trust-accounting». Відповідь одним документом: consultation fee = earned on delivery (не ретейнер); LF BOSS ніколи не тримає клієнтські гроші — Stripe Connect пише напряму на рахунок RCIC; ретейнер = milestone-billing заробленого. Дизайн: /trust-accounting сторінка, PDF-версія для sharing у CICC-спільнотах.</p>
+    </div>
+    <div class="card">
+      <span class="ico">👤</span>
+      <h4>Founder story — Vitaly як реальний оператор</h4>
+      <p>VIGO House (нерухомість з <strong>2012</strong>), VIGO Windows (з <strong>2017</strong>, Energy Star), Net Zero homes — це живий капітал і підтверджений досвід побудови бізнесів. LF BOSS народився з власного болю: квіз для продажу $720K–$1.8M проєктів. Наратив: «ми побудували це для себе, тому що нічого такого не існувало». Це справжнє походження продукту — і воно резонує з RCIC, які самі будують практику з нуля.</p>
+    </div>
+  </div>
+
+  <div class="accent">
+    <div class="stat"><b>100%</b><span>реальні відгуки з письмовою згодою від першого outreach</span></div>
+    <div class="stat"><b>1 реальний</b><span>відео-відгук RCIC ≈ 50 text-відгуків у trust-ніші</span></div>
+    <div class="stat"><b>48 год</b><span>збір першого Stripe-скріна після пілоту Svitlana</span></div>
+  </div>
+
+  <h3>Pipeline збору доказів — кожна перемога у систему</h3>
+  <p class="lead">Доказова база не будується «потім» — вона збирається з першого дня по протоколу.</p>
+
+  <div class="timeline">
+    <div class="phase">
+      <div class="days">День 0</div>
+      <div class="ph">Оновлення соціального доказу</div>
+      <p>Замінити поточні placeholder-відгуки на leadfilter.ca та lfboss.com реальними відгуками з письмовою згодою. Зафіксувати стан до/після. Підготувати written-approval форму (шаблон у offer kit).</p>
+    </div>
+    <div class="phase">
+      <div class="days">День 1–7</div>
+      <div class="ph">Перший живий доказ</div>
+      <p>Пілот зі Svitlana: після першого реального депозиту через LF BOSS — запросити дозвіл на Stripe-скрін. Записати 60-сек Loom від Svitlana (ліцензія CICC, локація, до/після). Це foundation усього.</p>
+    </div>
+    <div class="phase">
+      <div class="days">Тиждень 2–4</div>
+      <div class="ph">Founding partner cohort</div>
+      <p>5–8 design-partner RCIC → кожен підписує 1-стор. design-partner agreement → надає письмову згоду на відгук → знімається коротке відео. Мета: <strong>5 реальних відео-відгуків до публічного виходу</strong>.</p>
+    </div>
+    <div class="phase">
+      <div class="days">Щомісяця</div>
+      <div class="ph">Автоматичний збір</div>
+      <p>Тригер у CRM: через 30 днів після першого депозиту → авто-email із запитом на відгук + лінк на форму згоди. Aggregate Stripe-дані → LinkedIn-пост «X депозитів цього місяця». Накопичувальний лічильник на сайті.</p>
+    </div>
+  </div>
+
+  <h3>Що RCIC перевірить — і що побачить</h3>
+  <div class="grid c3">
+    <div class="card">
+      <span class="ico">🔍</span>
+      <h4>Reverse-image search відгуків</h4>
+      <p>Після зачистки — <span class="pill lime">нічого підозрілого</span>. Реальні обличчя RCIC-ліцензіатів, верифіковані через CICC-реєстр.</p>
+    </div>
+    <div class="card">
+      <span class="ico">📋</span>
+      <h4>Перевірка CICC-реєстру</h4>
+      <p>Ім'я + ліцензія у відгуку збігаються з публічним реєстром CICC. <span class="pill lime">Верифіковано</span> за 30 секунд.</p>
+    </div>
+    <div class="card">
+      <span class="ico">💼</span>
+      <h4>Перевірка VIGO Group</h4>
+      <p>vigogroup.ca, VIGO Windows, VIGO House — реальні бізнеси з 2012. Ontario Business Registry. <span class="pill lime">Живий капітал</span>, не оболонка.</p>
+    </div>
+  </div>
+
+  <div class="callout dark">
+    <span class="t">Стратегічний принцип</span>
+    <p>У trust-ніші (RCIC регулює іміграційні долі людей) <strong>реальний соціальний доказ коштує більше, ніж будь-який маркетинговий текст.</strong> Наша робота — спочатку замінити placeholder-відгуки на справжні, потім систематично додавати нові докази з кожним успішним пілотом. Ми будуємо довіру з першого дня — і це наша перевага над конкурентами, які цього не роблять.</p>
+  </div>
+
+  <ul class="check">
+    <li>Соціальний доказ оновлено до першого outreach: реальні відгуки з письмовою згодою <strong>(Vitaly: виконати до Дня 0)</strong></li>
+    <li>Written-approval форма підготовлена і підписана кожним реальним адвокатом</li>
+    <li>Trust-accounting сторінка /trust-accounting live до публічного виходу</li>
+    <li>Перший Stripe-скрін отримано у перший тиждень пілоту</li>
+    <li>5 відео-відгуків RCIC зібрано до кінця founding cohort (тиждень 4)</li>
+    <li>Авто-тригер збору доказів активовано в CRM після Дня 30</li>
+  </ul>
+</section>
+
+<section class="section" id="siteconv">
+  <span class="eyebrow"><span class="dot"></span>13 · Сайт: конверсійні апгрейди</span>
+  <h2>Чотири add-ons, які перетворюють сторінку на машину активації</h2>
+  <p class="lead">Тірдаун знімає блокери довіри. Ці чотири модулі добудовують воронку до повної: від першого дотику до активованого акаунту. Специфіковано для Vitaly — кожен блок містить мету, технічне рішення та вимірюваний impact.</p>
+
+  <div class="grid c2">
+
+    <div class="card">
+      <span class="ico">🎯</span>
+      <h4>1. Живий квіз-демо на головній</h4>
+      <p><strong>Що:</strong> вбудований iframe або JS-виджет — реальний квіз із 4–5 питань (тип справи, країна, бюджет клієнта). Кнопка «Спробуй за 2 хв» прямо над fold.</p>
+      <p><strong>Навіщо:</strong> RCIC бачить продукт у дії ще до реєстрації. Клин продає себе — жодного PDF, жодного pitch-відео. Знімає головне заперечення: «не розумію, що він робить».</p>
+      <p><strong>Impact:</strong> підвищує trial-conversion на <b>20–35%</b> (benchmark: Typeform embed vs статичний LP). Зменшує CAC, бо скорочує цикл «побачив → зрозумів».</p>
+      <div class="callout">
+        <span class="t">Dev note</span>
+        <p>Embed готового квіз-флоу через <code>postMessage</code>. Достатньо одного read-only токена для демо-акаунту. Без реєстрації, без збереження даних — юридично чисто.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="ico">🧮</span>
+      <h4>2. ROI-калькулятор «Ціна безкоштовних консультацій»</h4>
+      <p><strong>Що:</strong> інтерактивний лід-магніт — RCIC вводить кількість безкоштовних консультацій/тиждень + ставку/год → калькулятор показує «зливаєш $X на місяць», LF BOSS повертає $Y.</p>
+      <p><strong>Навіщо:</strong> ворог №1 — статус-кво. Найпереконливіший аргумент проти Excel — гроші, які вже втрачені. Калькулятор матеріалізує біль без жодного слова від сейлза.</p>
+      <p><strong>Impact:</strong> лід-магніти з персоналізованим числом конвертують у <b>3–5× краще</b> від статичних цифр. Email-gate після результату → пряме потрапляння в nurture-послідовність.</p>
+      <div class="callout dark">
+        <span class="t">Готовий ассет</span>
+        <p>ROI-калькулятор вже зроблено:<br><code>/Users/allweart/Desktop/LF-BOSS-Agent/assets/roi-calculator-19.06.2026.html</code><br>Embed як iframe або перенести CSS/JS в основний сайт. Dev-час: ~2 год.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="ico">🤝</span>
+      <h4>3. Concierge-онбординг «Done-for-you» для перших 10</h4>
+      <p><strong>Що:</strong> при реєстрації — офер: «Ми налаштуємо перший квіз разом. 30 хв у Calendly.» Команда веде сесію, клієнт виходить з готовим продуктом.</p>
+      <p><strong>Навіщо:</strong> <b>84% SaaS-юзерів кидають продукт у blank state</b> (Intercom 2024). RCIC відкриває акаунт → бачить порожній дашборд → закриває. Один живий Calendly-колл вирішує це повністю.</p>
+      <p><strong>Impact:</strong> activation rate зростає з ~16% до <b>60–70%</b> (SaaS benchmark: high-touch onboarding перших когорт). Перші 10 клієнтів = 10 testimonials + product feedback + чurnless перший місяць.</p>
+      <div class="callout warn">
+        <span class="t">Bandwidth</span>
+        <p>Ліміт 10 слотів — не нескінченно. Calendly з обмеженою кількістю дат. Після 10 → відеогід замінює живий колл.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="ico">🎓</span>
+      <h4>Відео-онбординг у платформі «2 хвилини»</h4>
+      <p>Коротке відео ВСЕРЕДИНІ продукту: користувач за <strong>2 хвилини</strong> сам налаштовує квіз→депозит→інвойс. Прямо вбиває blank-state churn (<strong>84% кидають</strong> порожній дашборд). Перша цінність до того, як встигне передумати.</p>
+    </div>
+
+    <div class="card">
+      <span class="ico">🔍</span>
+      <h4>4. Тизер comparison-сторінок</h4>
+      <p><strong>Що:</strong> заглушки з анонсом: «Порівняння з Officio», «LF BOSS vs Maple», «Найкраща CRM для нових RCIC» — видимі в навігації, але поки редиректять на waitlist або контакт.</p>
+      <p><strong>Навіщо:</strong> SEO-ефект починається при індексації URL, а не при публікації повної сторінки. RCIC гуглить «Officio alternative 2025» — наш URL уже в індексі, займає місце до того, як конкурент помітить.</p>
+      <p><strong>Impact:</strong> comparison-запити мають <b>транзакційний інтент</b> — конвертують у <b>2–4×</b> краще від brand-запитів. Повна SEO-стратегія → секція 12 цього документа.</p>
+      <div class="callout">
+        <span class="t">Dev note</span>
+        <p>Мінімальний варіант: 3 статичні сторінки з H1 + 200 слів + email-форма. Без складного контенту. Потрібно 2–3 год. Розгортання деталей — після виходу SEO-секції.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="accent">
+    <div class="grid c4">
+      <div class="stat"><b>84%</b><span>кидають blank state (Intercom)</span></div>
+      <div class="stat"><b>3–5×</b><span>конверсія з персоналізованим числом</span></div>
+      <div class="stat"><b>~2 год</b><span>dev-час для ROI embed</span></div>
+      <div class="stat"><b>4×</b><span>конверсія comparison vs brand-запити</span></div>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Модуль</th>
+        <th>Dev-час</th>
+        <th>Пріоритет</th>
+        <th>Де блокує воронку</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Живий квіз-демо</td>
+        <td>4–6 год</td>
+        <td><span class="pill lime">Sprint 1</span></td>
+        <td>Awareness → Intent</td>
+      </tr>
+      <tr>
+        <td>ROI-калькулятор</td>
+        <td>~2 год (embed)</td>
+        <td><span class="pill lime">Sprint 1</span></td>
+        <td>Intent → Trial</td>
+      </tr>
+      <tr>
+        <td>Concierge-онбординг</td>
+        <td>1 год (Calendly)</td>
+        <td><span class="pill lime">Sprint 1</span></td>
+        <td>Trial → Activation</td>
+      </tr>
+      <tr>
+        <td>Comparison-тизери</td>
+        <td>2–3 год</td>
+        <td>Sprint 2</td>
+        <td>Organic → Top-of-funnel</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout dark">
+    <span class="t">Принцип</span>
+    <p>Ці чотири модулі не вимагають нового продукту — вони розкривають цінність того, що вже є. Живий квіз показує клин. Калькулятор матеріалізує біль. Concierge гарантує перший успіх. Comparison-сторінки займають SEO-позиції до старту конкурента. Разом — повна конверсійна петля від першого візиту до активованого клієнта.</p>
+  </div>
+</section>
+
+<section class="section" id="executive">
+  <span class="eyebrow"><span class="dot"></span>14 · Резюме і велика ставка</span>
+  <h2>Не «дешевший all-in-one». Клин туди, де ніхто не стоїть.</h2>
+
+  <p class="lead">Ми зайшли туди, де жоден конкурент навіть не стоїть. Officio і Maple стартують <strong>після підписання ретейнера</strong>. LF BOSS стартує <strong>до першого дзвінка</strong> — коли RCIC ще вирішує, чи варто взагалі витрачати 45 хвилин. Там і є гроші, яких вони зараз не отримують. Ми просто ставимо двері там, де ніколи не було дверей.</p>
+
+  <div class="grid c3">
+    <div class="stat"><b>+470/рік</b><span>ринок RCIC зростає, ×2 з 2018</span></div>
+    <div class="stat"><b>~6 509</b><span>ICP-ядро: соло 0–4 роки (~54% ринку)</span></div>
+    <div class="stat"><b>$0</b><span>рекламного бюджету в перші 90 днів</span></div>
+  </div>
+
+  <div class="grid c2">
+    <div class="card">
+      <span class="ico">⚔️</span>
+      <h4>Чому клин, не ціна</h4>
+      <p>Maple від <strong>$12/user/міс</strong>. Ми не виграємо на ціні. Ми виграємо на тому, чого в них нема: <strong>квіз-кваліфікуй → депозит ДО дзвінка → ретейнер-інвойс → авто-догон</strong> — один зчеплений flow. Calendly, ScoreApp, QuickBooks роблять це по шматках. Ніхто не зчепив усе разом під RCIC.</p>
+    </div>
+    <div class="card">
+      <span class="ico">💰</span>
+      <h4>Позиція на ринку</h4>
+      <p>«Officio веде ваші справи. <strong>LF BOSS наповнює їх платящими клієнтами.</strong>» Ми доповнюємо, не замінюємо. Officio-юзер — не ворог, це ICP. Ворог №1 = статус-кво: Excel + ручна робота + безкоштовні консультації для тайр-кікерів.</p>
+    </div>
+    <div class="card">
+      <span class="ico">🎯</span>
+      <h4>Ціль 90 днів</h4>
+      <p><strong>12–16 платящих RCIC</strong> (стретч: 25). Кеш-кост: ~$300–500 (тільки інструменти). 8–10 written-approved відгуків реальних партнерів — головний актив після 90 днів. Нуль реклами.</p>
+    </div>
+    <div class="card">
+      <span class="ico">📐</span>
+      <h4>Органічний GTM</h4>
+      <p>Теплі контакти через Svitlana → LinkedIn outbound (~100 коннектів/тиж, value-first) → CASL-пошта з реєстру CICC (50/день, 3-touch) → гейткіпер-апсайд (Parsai/CAPIC). Все органічне. Перший канал — теплі репи, бо регульована аудиторія рухається через «своїх».</p>
+    </div>
+  </div>
+
+  <div class="accent">
+    <h4>Модель: B2B2C, партнер-led</h4>
+    <p>Заходимо в <strong>B2B</strong> — рекрутуємо <strong>партнерів</strong> (RCIC, вендори, design-partners як Svitlana), які впроваджують і розносять LF BOSS до своїх кінцевих клієнтів (<strong>B2C</strong>). Не продаємо кожному поодинці — кожен партнер стає каналом. Це і є двигун реплікації: один доведений партнер → багато клієнтів.</p>
+  </div>
+
+  <div class="accent">
+    <h4>Перший крок: довести сайт і соціальний доказ до ладу</h4>
+    <p>Перед першим outreach — оновити соціальний доказ: зібрати реальні (consented) відгуки від перших партнерів замість поточних placeholder'ів, та посилити довіру живими кейсами. Паралельно: полагодити «Get Started» (привести до робочого стану з коректним квізом). Це стандартна підготовка — робимо разом, швидко.</p>
+  </div>
+
+  <div class="callout warn">
+    <span class="t">Увага: мульти-вертикальність</span>
+    <p>LF BOSS — мульти-вертикальний продукт (на сайті зараз construction/renovation лендинг). Цей документ <strong>повністю під RCIC/імміграцію</strong> — маркетинговий клин через Svitlana і RCIC-спільноту. Механіка продукту (квіз → депозит → ретейнер) ідентична, міняється ICP + меседжинг. Перед паралельним виходом у construction — окрема стратегія.</p>
+  </div>
+
+  <div class="callout dark">
+    <span class="t">Велика ставка одним реченням</span>
+    <p>Ринок RCIC зріс вдвічі з 2018. Front-of-funnel не виграв ніхто. Ми будуємо єдиний клин, що перетворює tire-kicker дзвінки на передоплачені консультації — і входимо в ринок без реклами, через тепло, з мінімальним ризиком.</p>
+  </div>
+</section>
+
+<section class="section" id="market">
+  <span class="eyebrow"><span class="dot"></span>15 · Ринок і аудиторія</span>
+  <h2>11 994 ліцензованих RCIC. Ринок подвоївся з 2018 — і продовжує рости.</h2>
+
+  <p class="lead">Це тісний, регульований ринок із публічним реєстром кожного потенційного клієнта. Вхідний бар'єр для нас — не «знайти» ICP, а довести йому, що продукт безпечний. Ринок не скорочується: CICC 2025 Annual Report фіксує <strong>+470 нових ліцензій за рік</strong>, з ~6 000 у 2018 до ~12 000 у 2025. Ця когорта новачків — наш beachhead.</p>
+
+  <div class="grid c3">
+    <div class="stat"><b>11 994</b><span>RCIC у good standing (CICC 2025)</span></div>
+    <div class="stat"><b>11 733</b><span>Резиденти Канади — serviceable база</span></div>
+    <div class="stat"><b>+470 / рік</b><span>Нових ліцензій щороку (×2 з 2018)</span></div>
+    <div class="stat"><b>~6 509</b><span>ICP-ядро (соло, 0–4 роки, ~54%)</span></div>
+    <div class="stat"><b>$30K–150K</b><span>Типовий annual revenue соло-RCIC (CAD)</span></div>
+    <div class="stat"><b>$0</b><span>Вартість target-листа — реєстр CICC публічний</span></div>
+  </div>
+
+  <h3>Чотири сегменти: хто ICP, хто — ні</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Сегмент</th>
+        <th>Розмір (прибл.)</th>
+        <th>Характеристика</th>
+        <th>Пріоритет</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Новачки 0–4 роки практики</strong></td>
+        <td>~6 509 (~54%)</td>
+        <td>Без incumbent-CRM, intake у WhatsApp/Google Forms, оплата e-transfer вручну. Максимальний біль — безкоштовні консультації + ручний догін ретейнерів. Нема залежності від Officio/Maple → легко переключаються. Ментори: Queen's / Ashton.</td>
+        <td><span class="pill lime">Ядро ICP ★★★</span></td>
+      </tr>
+      <tr>
+        <td><strong>Соло-практика 1–3 особи</strong></td>
+        <td>~7 200–8 400 (~60–70%)</td>
+        <td>Власник = консультант = бухгалтер = маркетолог. Revenue $30K–150K CAD/рік. Відкриті до тулів, що «вже заробляють гроші» (pay-per-op без підписки-ризику). Частково перетинається з новачками.</td>
+        <td><span class="pill lime">Первинний ICP ★★★</span></td>
+      </tr>
+      <tr>
+        <td><strong>Фірми 4+ / корпоративні</strong></td>
+        <td>~2 400–3 000 (~20–25%)</td>
+        <td>Вже на Officio або Maple. Складніший switch. Ухвалення рішень багатошарове. Не ICP на старті — expansion пізніше, після валідації клина.</td>
+        <td>Не ICP зараз</td>
+      </tr>
+      <tr>
+        <td><strong>Англомовний мейнстрім через Svitlana-канал</strong></td>
+        <td>Кількісно не верифіковано</td>
+        <td>Svitlana Asadchykh — англомовний RCIC-конектор і перший партнер. Вхід до ширшого реєстру RCIC англійською. Рухається через тепле 1:1 інтро, не cold-email. Підтверджений вхід: Svitlana Asadchykh (єдиний реальний early adopter).</td>
+        <td><span class="pill lime">Warm-канал ★★</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="accent">
+    <h4>Jobs To Be Done — єдиний job, що важить</h4>
+    <p>«Коли я завершую безкоштовну консультацію і клієнт йде думати — я хочу мати гроші на рахунку ДО наступного дзвінка, щоб не витрачати ще 30 хвилин на людину, яка не підпише ретейнер.»<br>Продукт наймають виконати один job: <strong>перетворити intake на передоплачений запис</strong>. Все інше — фічі.</p>
+  </div>
+
+  <h3>Болі — ранжовані за гостротою</h3>
+
+  <div class="grid c2">
+    <div class="card">
+      <span class="ico">💸</span>
+      <h4>#1 Отримати гроші (всесегментний)</h4>
+      <p>Безкоштовні консультації для tire-kickers + пауза між підписанням ретейнера і першим платежем. Reddit verbatim: <em>«do not take full payment upfront — it's all about cash flow»</em>. Єдиний по-справжньому пекучий painkiller.</p>
+    </div>
+    <div class="card">
+      <span class="ico">🕒</span>
+      <h4>#2 Кваліфікація вручну</h4>
+      <p>30–60 хв безкоштовного дзвінка, щоб дізнатись, що людина не eligible. Час = головний невідновлюваний ресурс соло-RCIC.</p>
+    </div>
+    <div class="card">
+      <span class="ico">👻</span>
+      <h4>#3 Гостинг після discovery call</h4>
+      <p>Провал кваліфікації, не фоллоу-апу. Ретейнер підписано — перший платіж не прийшов. Догін вручну через e-transfer або SMS.</p>
+    </div>
+    <div class="card">
+      <span class="ico">🚫</span>
+      <h4>#4 No-shows і скасування</h4>
+      <p>Консенсусний фікс у вертикалях — депозит при бронюванні. RCIC знають рішення, але нема простого інструменту що пакує бронь + депозит в один крок.</p>
+    </div>
+  </div>
+
+  <h3>Тригери купівлі — коли RCIC найбільш вразливий до нового тулу</h3>
+
+  <ul class="clean">
+    <li><strong>Перший місяць ліцензії</strong> — налаштовує workflow з нуля, нема Officio-залежності.</li>
+    <li><strong>Після третьої безкоштовної консультації поспіль</strong> — біль свіжий, рахує втрачені гроші.</li>
+    <li><strong>No-show без попередження</strong> — відразу після інциденту відкрита до депозит-рішення.</li>
+    <li><strong>Перегляд тарифів</strong> — піднімає rates, хоче перебудувати intake під «серйозну практику».</li>
+    <li><strong>Скарга на GHL/CRM складність</strong> — Reddit-треди, пошук простіших інструментів.</li>
+  </ul>
+
+  <div class="callout">
+    <span class="t">Ключовий інсайт (April Dunford — big fish, small pond)</span>
+    <p>11 733 RCIC у Канаді — це <em>маленький ринок з великою концентрацією болю</em>. Категорію «front-of-funnel payment tool для RCIC» ще ніхто не виграв. Вони досі питають на Reddit «який найкращий CRM?» — категорія не визначена в їхніх головах. Це і є вікно.</p>
+  </div>
+
+  <div class="callout warn">
+    <span class="t">Підготовка: регульована аудиторія цінує довіру</span>
+    <p>RCIC орієнтуються на CICC Code §45 (відгуки), §44 (реклама), PIPEDA, CASL. Це і є наша перевага: ми будуємо продукт, що спочатку забезпечує відповідність правилам ніші — саме це формує довіру там, де інші інструменти цього не роблять. Перший крок перед outreach — оновити соціальний доказ реальними відгуками і привести сайт до бойового стану.</p>
+  </div>
+</section>
+
+<section class="section" id="ladder">
+  <span class="eyebrow"><span class="dot"></span>16 · Сходи впізнавання Бена Ханта</span>
+  <h2>Де знаходиться RCIC — і що сказати на кожному кроці</h2>
+
+  <p class="lead">Більшість RCIC зараз на рівні 0–1: вони відчувають біль від безкоштовних консультацій, але не знають, що це <em>системна проблема з системним рішенням</em>. Продавати продукт «холодним» — злив. Спочатку назвати проблему числом — потім показати рішення. (Методологія: Ben Hunt — <em>Convert!</em> / Eugene Schwartz, у синтезі зі скілом <code>positioning/SKILL.md</code>.)</p>
+
+  <div class="callout dark">
+    <span class="t">Правило входу в холодну нішу</span>
+    <p>Меседж не за рівнем awareness = злив. <strong>Рівень 0 → дзеркало болю без продукту. Рівень 4 → прямий оффер</strong> тільки після того, як людина сама пройшла 0→3.</p>
+  </div>
+
+  <div class="ladder">
+
+    <div class="rung">
+      <div class="lvl">Рів. 0</div>
+      <div>
+        <h4>Unaware — «Так і повинно бути»</h4>
+        <p><strong>Mindset:</strong> «Безкоштовні консультації — це норма. Так роблять всі RCIC. Деякі не підписують ретейнер — це ризик бізнесу.» Людина не рахує втрачені гроші.</p>
+        <p><strong>Ярлик-цифра (єдиний інструмент на цьому рівні):</strong> <em>«Tax on Free Consultations»</em> — <strong>10 безкоштовних консультацій/тиждень × 30 хв = 5 неоплачених годин = $500–750 втраченого білінгу/місяць. $6 000–9 000/рік.</strong> Ніякого продукту. Тільки дзеркало.</p>
+        <p><strong>Меседж:</strong> «Ти не жертвуєш часом — ти платиш людям за право передумати.»</p>
+        <p><strong>Канал:</strong> LinkedIn organic (Svitlana/партнери постять математику 2×/тиж за нашими темами, без згадки продукту в перших 3 постах). Reddit r/canadavisa (пояснюємо, чому депозит захищає клієнта, нуль продукту). RCIC-спільноти через design-партнерів.</p>
+        <p><strong>Контент-актив:</strong> Пост «Скільки коштує ваша безкоштовна консультація» (LinkedIn). Коментар у Reddit-треді про «how do you handle tire-kickers» — без продукту, з математикою.</p>
+      </div>
+    </div>
+
+    <div class="rung">
+      <div class="lvl">Рів. 1</div>
+      <div>
+        <h4>Problem-Aware — «Це справді проблема, але я не знаю рішення»</h4>
+        <p><strong>Mindset:</strong> «Так, я витрачаю час на людей, що зникають. Але хіба можна брати гроші до першого дзвінка? Чи це не відлякає клієнтів?» Людина шукає «як зменшити no-shows» або «як кваліфікувати ліди RCIC».</p>
+        <p><strong>Меседж:</strong> «Депозит до дзвінка — це не агресія, це стандарт. Серйозні RCIC так роблять. Він відсіює tire-kickers і сигналить організованість.» Міні-гайд «Paid vs Free Consultation» із прикладами реальних RCIC-тарифів (депозит ~$30–40 CAD за первинну консультацію — точну суму встановлює сам RCIC, уточнити; зараховується в ретейнер).</p>
+        <p><strong>Канал:</strong> LinkedIn SEO (пости під «RCIC consultation fee», «how to stop no-shows»). CASL-email 3-touch з реєстру CICC: відкривашка — безкоштовний гайд, без пітча.</p>
+        <p><strong>Контент-актив:</strong> «RCIC Consultation Deposit: повна інструкція (CICC-compliant)» — PDF або лендинг. Пояснює: депозит = consultation fee earned on delivery (не ретейнер → нема trust-account risk). Включає шаблон email клієнту + compliance note §44.</p>
+      </div>
+    </div>
+
+    <div class="rung">
+      <div class="lvl">Рів. 2</div>
+      <div>
+        <h4>Solution-Aware — «Мені потрібен інструмент, але не знаю який»</h4>
+        <p><strong>Mindset:</strong> «Добре, депозит — хороша ідея. Calendly + Stripe може? Або GHL? Або Officio вже це вміє?» Людина порівнює класи рішень. Питає на Reddit «який найкращий CRM для RCIC».</p>
+        <p><strong>Меседж (позиціювання проти Officio/Maple):</strong> <em>«Officio веде ваші справи. LF BOSS наповнює їх платящими клієнтами.»</em> Ми — доповнення, не війна. Конкурент №1 = <strong>статус-кво (Excel + ручна робота)</strong>, не Officio. Категорія: «front-of-funnel get-paid tool для RCIC» — її ще ніхто не зайняв.</p>
+        <p><strong>Демо-меседж:</strong> Intake-квіз (5 хв клієнт заповнює сам) → Stripe-депозит ~$30–40 CAD (суму встановлює сам RCIC) → підтвердження на телефон → RCIC бачить кваліфікований, оплачений лід. <strong>90-сек Loom</strong> (шлях лід→квіз→депозит→підтвердження, mobile + desktop).</p>
+        <p><strong>Канал:</strong> LinkedIn DM value-first (безкоштовний white-label квіз під їхню нішу за 48год — це aha без пітча). Design-partner outreach через Svitlana + warm репи. Loom вбудований у перший email.</p>
+        <p><strong>Контент-актив:</strong> 4 compliant шаблони квіза (Express Entry / PNP / spousal / study-permit пре-скринінг) + дисклеймер «not immigration advice / intake only» + consent-чекбокс. Готові до відправки як реф-кіт.</p>
+      </div>
+    </div>
+
+    <div class="rung">
+      <div class="lvl">Рів. 3</div>
+      <div>
+        <h4>Product-Aware — «Знаю LF BOSS, але не переконаний»</h4>
+        <p><strong>Mindset:</strong> «Звучить добре, але: (а) чи це CICC-compliant? (б) чи безпечно гнати депозити через Stripe? (в) скільки коштує? (г) хтось вже пробував?» Людина шукає докази і risk reversal.</p>
+        <p><strong>Risk reversal (головний меседж рівня):</strong> <em>«Безкоштовно, поки перший депозит не впав на <strong>ВАШ</strong> Stripe.»</em> Ніякої передплати до результату. Pay-per-operation = нуль підписки-ризику. Навіть один невеликий депозит (~$30–40 CAD) ще до дзвінка = миттєвий кеш і окуповує LF BOSS. Один повернутий milestone = рік.</p>
+        <p><strong>Compliance-shield меседж:</strong> One-pager trust-accounting: «consultation fee earned on delivery; ретейнер = milestone-білінг заробленого; LF BOSS ніколи не тримає клієнтські гроші». PIPEDA + CASL + written-approval відгук форма.</p>
+        <p><strong>Соціальний доказ:</strong> Written-approved відгук Svitlana Asadchykh (реальне ім'я, реєстр CICC #) + скрин зібраного депозиту. 1 реальний кейс із числом («зібрав $1 400 депозитів за 30 днів») б'є 50 анонімних зірочок. Працюємо тільки з реальними (consented) відгуками — це будує довіру в регульованій ніші і є нашою конкурентною перевагою.</p>
+        <p><strong>Канал:</strong> Founding design partner онбординг 1:1 (особисто від команди). Готовий квіз під їхню практику за 48год. Вебінар із RCIC-партнером «Get Paid Faster» (Parsai / CAPIC / Queen's — апсайд, не план).</p>
+        <p><strong>Контент-актив:</strong> Готовий white-label квіз + 90-сек Loom + compliance one-pager + design-partner agreement (1 стор.).</p>
+      </div>
+    </div>
+
+    <div class="rung">
+      <div class="lvl">Рів. 4</div>
+      <div>
+        <h4>Most-Aware — «Перший депозит упав — що далі?»</h4>
+        <p><strong>Mindset:</strong> «Квіз налаштований. Перша оплата прийшла на мій Stripe. Це працює. Як отримати більше, автоматизувати, і чи є бонус за те, що пораджу колегам?»</p>
+        <p><strong>Тригер (авто-апгрейд):</strong> <strong>«Перший депозит упав»</strong> → платформа надсилає auto-upgrade на retainer-invoicing + dunning + перший місяць free. Не чекати — тригер повинен спрацьовувати сам, без ручного втручання.</p>
+        <p><strong>Меседж:</strong> «Ви вже отримали перший депозит. Тепер автоматизуйте решту: ретейнер по милстоунах, авто-нагадування, smart CRM.» ROI-якір: один повернутий клієнт через авто-догон = рік передплати.</p>
+        <p><strong>Реферал (Passive Income модуль):</strong> «10 RCIC-колег → постійний пасивний дохід від першої хвилі партнерів.» Пітч design-партнерам на День 46+. Сид-лист: адміни FB-груп + ментори Фази 1. <em>⚠️ Тримати чисту смугу — без «traffic arbitrageurs», репутаційний ризик у регульованій аудиторії.</em></p>
+        <p><strong>Канал:</strong> In-app trigger. Email-автоматизація (upgrade-offer через Instantly/Lemlist). Персональний follow-up для founding design partners.</p>
+        <p><strong>Контент-актив:</strong> Автоматизований onboarding-email «Ваш перший депозит — і що далі» + реферальна інструкція + форма written-approved відгуку для наступного кейсу.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="accent">
+    <h4>Стратегічний висновок по сходах</h4>
+    <p>90% RCIC зараз на <strong>Рів. 0–1</strong>. Не продавай продукт першим кроком — спочатку дай математику болю (LinkedIn + Reddit). Лише після того, як людина сама дійде до «мені потрібен інструмент», — показуй демо і risk reversal. Весь цикл Рів. 0→4 = <strong>14–45 днів</strong> залежно від каналу.</p>
+  </div>
+
+  <div class="callout">
+    <span class="t">Позиційний стейтмент (internal, April Dunford)</span>
+    <p>Для <strong>соло-RCIC 0–4 роки практики</strong>, яким <strong>потрібно перетворити intake на передоплаченого клієнта ДО першого дзвінка</strong>, <strong>LF BOSS</strong> — це <strong>front-of-funnel get-paid інструмент</strong>, що <strong>пакує квіз → депозит → авто-догон в один цикл</strong>. На відміну від <strong>Officio/Maple (стартують після підписання ретейнера)</strong>, LF BOSS <strong>наповнює їх платящими клієнтами ще до того, як вони потраплять у CRM</strong>.</p>
+  </div>
+</section>
+
+<section class="section" id="competitors">
+  <span class="eyebrow"><span class="dot"></span>17 · Конкурентний ландшафт</span>
+  <h2>Ніхто не зчепив квіз → депозит → інвойс → догон в один цикл</h2>
+  <p class="lead">Ринок RCIC-інструментів заповнений case-management системами. Всі вони вирішують одну й ту саму проблему — вести справу ПІСЛЯ підписання ретейнера. Фронт воронки (кваліфікація, платний вхід, авто-догон) — незайнятий. Категорію в голові RCIC ще ніхто не виграв: вони досі питають на Reddit «який найкращий CRM?»</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Конкурент</th>
+        <th>Що це</th>
+        <th>Ціна (2026)</th>
+        <th>Де стартує</th>
+        <th>Сліпа пляма</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Officio</strong><br><small>officio.ca</small></td>
+        <td>RCIC-native case management. Де-факто стандарт ринку, 25+ років. Solo / Pro / Ultimate тири.</td>
+        <td>від <strong>~$69/міс CAD</strong><br>(~$828/рік на вході)</td>
+        <td>Після підписання ретейнера</td>
+        <td>Нуль lead-acquisition. Жодного квіза, жодного payment-gate до дзвінка. Tire-kicker потрапляє на безкоштовну консультацію так само легко, як серйозний клієнт.</td>
+      </tr>
+      <tr>
+        <td><strong>Maple CRM</strong><br><small>maplecrm.com</small></td>
+        <td>Immigration CRM з індійськими коренями. Активно використовується новачками-RCIC як дешевша альтернатива.</td>
+        <td><strong>~$12/user/міс</strong><br>(~$144/user/рік)</td>
+        <td>Після підписання ретейнера</td>
+        <td>Той самий blind spot: нема front-of-funnel, нема payment до дзвінка. Maple-юзери = новачки = наш ICP. Але Maple не конкурент — він не наповнює воронку.</td>
+      </tr>
+      <tr>
+        <td><strong>Clio Grow</strong></td>
+        <td>Legal CRM + intake для юридичних фірм (США / широко). Не RCIC-специфічний.</td>
+        <td><strong>$59+/user/міс</strong></td>
+        <td>Після підписання ретейнера</td>
+        <td>Дорогий, важкий, не знає RCIC-регуляторики (CICC §44–46). RCIC потребує RCIC-інструмент, не generic legal.</td>
+      </tr>
+      <tr>
+        <td><strong>Docketwise / eImmigration / CaseEasy / VisaNauta</strong></td>
+        <td>US/Canada immigration filings + document automation. Кожен — глибока спеціалізація на forms.</td>
+        <td>varies</td>
+        <td>Після підписання ретейнера</td>
+        <td>Filing-focus. Нема front-funnel узагалі. Ціль: інтегруватись, не конкурувати на filings.</td>
+      </tr>
+      <tr>
+        <td><strong>Calendly + Stripe + QuickBooks</strong></td>
+        <td>«DIY-стек»: booking, депозит, інвойс окремо. Реальний status quo у 60–70% новачків-RCIC.</td>
+        <td><strong>$8–30+/міс</strong><br>кожен, разом $20–60+</td>
+        <td>Не зчеплений — кожен інструмент окремо, ручний перехід між ними</td>
+        <td>Тріщина між Calendly і Stripe → ліди падають. Квіз немає. Ретейнер-інвойс вручну. Авто-догон вручну. Це і є наш ворог №1.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="accent">
+    <h4>Головний інсайт: не ринок переповнений — переповнена одна половина ринку</h4>
+    <p>Officio, Maple, Clio Grow — всі стартують <strong>після</strong> підписання ретейнера. Вони конкурують за право вести справу. Ніхто не конкурує за право <strong>наповнити практику платними клієнтами ДО першого дзвінка</strong>. Це порожнє поле — і LF BOSS на ньому перший.</p>
+  </div>
+
+  <div class="grid c3">
+    <div class="stat"><b>$0</b><span>front-of-funnel рішень у RCIC-ніші</span></div>
+    <div class="stat"><b>6 509</b><span>ICP-RCIC (0–4 роки, соло) без incumbent-CRM</span></div>
+    <div class="stat"><b>+470/рік</b><span>нових RCIC ліцензій — ринок РОСТЕ, не скорочується</span></div>
+  </div>
+
+  <div class="callout">
+    <span class="t">Позиція відносно Officio</span>
+    <p><strong>«Officio веде ваші справи. LF BOSS наповнює їх платними клієнтами.»</strong> Ми — доповнення, не замінник. RCIC з Officio = ідеальний юзер LF BOSS: у нього є інструмент для справ, але нема інструменту, щоб ці справи з'явились. Maple-юзери так само.</p>
+  </div>
+
+  <div class="callout warn">
+    <span class="t">Не воювати на ціні</span>
+    <p>При Maple ~$12/user/міс і Officio від ~$69/міс — LF BOSS НЕ виграє ціновою конкуренцією. Перемога ТІЛЬКИ на клині (front-of-funnel get-paid), якого в них нема. Ціна — підтримка аргументу, не заголовок.</p>
+  </div>
+</section>
+
+<section class="section" id="positioning">
+  <span class="eyebrow"><span class="dot"></span>18 · Позиціювання</span>
+  <h2>Ворог №1 — не Officio. Ворог №1 — Excel і ручна робота</h2>
+  <p class="lead">Позиціювання — це не слоган. Це контекст, у якому RCIC миттєво розуміє цінність. Ми не замінюємо case-management. Ми виграємо нову категорію — front-of-funnel get-paid, — якої ще ніхто не назвав і не виграв. <em>(April Dunford, Obviously Awesome, 2019 — Big fish, small pond)</em></p>
+
+  <div class="grid c2">
+    <div class="card">
+      <span class="ico">🎯</span>
+      <h4>Крок 1 — Справжня альтернатива</h4>
+      <p>Що RCIC-новачок робить сьогодні без LF BOSS? Google Forms для інтейку + Calendly + ручний e-transfer + WhatsApp для догону. Або: просто безкоштовний дзвінок і надія, що людина підпише. <strong>Це наш справжній конкурент — status quo.</strong> Officio і Maple починають де status quo закінчується.</p>
+    </div>
+    <div class="card">
+      <span class="ico">🔑</span>
+      <h4>Крок 2-3 — Унікальні атрибути → Цінність</h4>
+      <p><strong>Атрибут:</strong> єдиний інструмент, що пакує квіз-кваліфікацію → платний депозит → ретейнер-інвойс → авто-догон в ОДИН цикл.<br><strong>Цінність:</strong> перший депозит від клієнта (~$30–40 CAD, встановлює сам RCIC) ще до дзвінка — tire-kicker відсіяний, cash flow захищений, no-show неможливий.</p>
+    </div>
+    <div class="card">
+      <span class="ico">👤</span>
+      <h4>Крок 4 — Хто цінує найбільше (ICP-ядро)</h4>
+      <p>RCIC 0–4 роки практики, соло. ~6 509 людей. Ще немає Officio-залежності. Кожна безкоштовна консультація — прямий збиток ($500–750/міс). Максимальна вразливість до нового інструменту і максимальний ROI від нього. Тепер через Queen's / Ashton + укр/рос діаспора GTA/Calgary.</p>
+    </div>
+    <div class="card">
+      <span class="ico">🏆</span>
+      <h4>Крок 5 — Market category</h4>
+      <p><strong>Big fish, small pond.</strong> Категорія: «RCIC Practice Revenue Starter» (підкатегорія immigration CRM). Ніхто не зайняв. Challenger у RCIC-case-mgmt категорії = програш. Але «перший інструмент, що наповнює вашу практику платними клієнтами» — це нова стелька в новій взуттєвій скриньці, де ми ПЕРШІ.</p>
+    </div>
+  </div>
+
+  <div class="accent">
+    <h4>Positioning Statement (internal — April Dunford)</h4>
+    <p>Для <strong>RCIC-новачків (0–4 роки, соло-практика)</strong>, які втрачають гроші на безкоштовних консультаціях і ручному догоні, <strong>LF BOSS</strong> — це <strong>RCIC front-of-funnel revenue system</strong>, що перетворює перший контакт на передоплаченого клієнта ще до дзвінка. На відміну від <strong>Excel / Calendly / ручного e-transfer</strong>, ми зчіплюємо квіз → депозит → інвойс → авто-догон в один керований потік.</p>
+  </div>
+
+  <h3>Value Equation (Hormozi) — чому оффер сильний</h3>
+  <p>Сприйнята цінність = <strong>(Омріяний результат × Ймовірність) ÷ (Час × Зусилля/ризик)</strong></p>
+
+  <div class="grid c4">
+    <div class="card">
+      <span class="ico">↑</span>
+      <h4>↑ Результат</h4>
+      <p>Перший депозит від клієнта ще до дзвінка (~$30–40 CAD, RCIC визначає сам). Один повернутий milestone = рік LF BOSS. Конкретно, не абстрактно.</p>
+    </div>
+    <div class="card">
+      <span class="ico">↑</span>
+      <h4>↑ Ймовірність</h4>
+      <p>Svitlana (справжній RCIC, публічно) + депозит-практика валідована ринком (immimentor.ca, canadaic.ca 2025–2026). Не гіпотеза — реальна норма ринку.</p>
+    </div>
+    <div class="card">
+      <span class="ico">↓</span>
+      <h4>↓ Час до результату</h4>
+      <p>Квіз live за 48 год. Перший депозит — до кінця тижня. Aha-moment = перший Stripe-пінг, а не кінець місяця.</p>
+    </div>
+    <div class="card">
+      <span class="ico">↓</span>
+      <h4>↓ Зусилля / ризик</h4>
+      <p>Pay-per-operation: платиш тільки коли гроші вже впали. Нуль передоплати до першого результату. Ніякого «ще один SaaS» психологічного бар'єру.</p>
+    </div>
+  </div>
+
+  <div class="callout dark">
+    <span class="t">JTBD-формулювання (мова клієнта)</span>
+    <p>«Коли я починаю нову RCIC-практику і витрачаю годину на безкоштовний дзвінок із людиною, яка не підпише ретейнер, — я хочу спосіб відсіяти tire-kickers до дзвінка і отримати гроші, ще не доводячи справу, — щоб мій cash flow не залежав від чиєїсь «серйозності намірів».»</p>
+  </div>
+
+  <p class="lead">Повна awareness-ladder (5 рівнів × меседж × канал) — у секції 04. Тут лише підсумок: ~90% RCIC на Рів. 0–1, тому фронт контенту = називати ціну болю, ще без продукту. Нижче — готові messaging-кути, що працюють на всіх рівнях.</p>
+
+  <div class="callout">
+    <span class="t">Messaging-кути для копірайтингу</span>
+    <p>
+      <span class="pill lime">1</span> «Перший депозит ~$30-40 від клієнта — ще до того, як ти взяв трубку» <br>
+      <span class="pill lime">2</span> «Відсій tire-kicker автоматично. Говори тільки з тими, хто вже заплатив» <br>
+      <span class="pill lime">3</span> «Officio веде ваші справи. LF BOSS наповнює їх платними клієнтами» <br>
+      <span class="pill lime">4</span> «Pay-per-operation: платиш тільки тоді, коли сам заробив» <br>
+      <span class="pill lime">5</span> «Навіть один невеликий депозит ще до дзвінка = миттєвий кеш + окуповує LF BOSS»
+    </p>
+  </div>
+</section>
+
+<section class="section" id="offer">
+  <span class="eyebrow"><span class="dot"></span>19 · Оффер та реф-кіт</span>
+  <h2>Навіть один невеликий депозит ще до дзвінка = миттєвий кеш + окуповує LF BOSS. Спробуй ще до першого рахунку</h2>
+  <p class="lead">Структура офферу будується навколо одного принципу: RCIC бачить гроші на своєму Stripe-рахунку <strong>до</strong> того, як заплатив за LF BOSS. Це знімає будь-який бар'єр «ще один SaaS» — і перетворює платформу на безризиковий досвід з очевидним ROI.</p>
+
+  <h3>Core Offer — три шари</h3>
+  <div class="grid c3">
+    <div class="card">
+      <span class="ico">🎯</span>
+      <h4>Шар 1 — Free Intake Wedge</h4>
+      <p>Безкоштовний RCIC Intake Quiz ready за <strong>48 годин</strong> (white-label під їхню практику: Express Entry / PNP / spousal / study-permit). Жодної кредитної картки. Aha-момент — перший депозит від клієнта ще до дзвінка.</p>
+      <p><span class="pill lime">Land</span> Квіз live → клієнт проходить → Stripe депозит (~$30–40 CAD, встановлює сам RCIC) → RCIC отримує повідомлення.</p>
+
+    </div>
+    <div class="card">
+      <span class="ico">💳</span>
+      <h4>Шар 2 — Pay-per-operation</h4>
+      <p>Платиш тільки за реальні операції (інвойс, прийнятий платіж, ретейнер-contract). <strong>75 кредитів ≈ $56.25</strong> — перший пакет, що покриває повний цикл першого клієнта. Take-rate <strong>5% через Stripe Connect</strong> — тільки коли гроші вже пішли до RCIC.</p>
+      <p><span class="pill lime">Expand</span> Ретейнер-інвойс по milestones → авто-догон неоплат (dunning) → smart CRM.</p>
+    </div>
+    <div class="card">
+      <span class="ico">🔄</span>
+      <h4>Шар 3 — Auto-upgrade тригер</h4>
+      <p>Перший депозит впав → авто-запрошення на повний ретейнер-billing + dunning. <strong>Перший місяць безкоштовно</strong> після активації. Після — лише операційний pay-per-use. Жодного примусового переходу на підписку.</p>
+      <p><span class="pill lime">Expand</span> Land-and-expand: вхід = безкоштовний квіз, розширення = кожна нова операція.</p>
+    </div>
+  </div>
+
+  <h3>Цінова логіка — просто і чесно</h3>
+  <div class="grid c2">
+    <div class="card">
+      <span class="ico">📊</span>
+      <h4>Затверджені цифри</h4>
+      <p>
+        <strong>5%</strong> take-rate через Stripe Connect<br>
+        <strong>75 кредитів ≈ $56.25</strong> PRO пакет<br>
+        <strong>$29/міс</strong> fallback flat-rate (тест при низькій активації)
+      </p>
+      <p><strong>Canonical ACV (на платящого RCIC):</strong> $600–900 CAD/рік (~$50–75/міс) при здоровому використанні. Це база всіх MRR-розрахунків у документі.</p>
+      <p style="opacity:.75;font-size:.9em">Калькулятор Vitaly показує $7.62/міс — це GTV на <em>зареєстрованого</em> юзера (включно з неактивними), інша метрика, не ACV. Не змішувати: $50–75 — на платящого, $7.62 — на всіх зареєстрованих.</p>
+    </div>
+    <div class="card">
+      <span class="ico">💰</span>
+      <h4>ROI-якір (як казати клієнту)</h4>
+      <p>«Навіть один невеликий депозит ще до дзвінка = <strong>миттєвий кеш + окуповує LF BOSS</strong>.»<br>
+      «Один повернутий ретейнер $2,000+ = рік LF BOSS — і ще залишиться.»<br>
+      «При 4 клієнтах на місяць — платформа окупається з <strong>першого ж тижня</strong>.»</p>
+      <p>⚠️ Не порівнюй ціну з Maple ~$12/user/міс — виграємо на клині, не на ціні.</p>
+    </div>
+  </div>
+
+  <div class="accent">
+    <h4>Founding Design Partner пропозиція (Дні 1–14)</h4>
+    <p>Перші <strong>5 RCIC</strong> отримують: повний безкоштовний доступ + білий квіз під їхню практику за 48год + пряма лінія на команду. Натомість: <strong>written-approved відгук + скрин першого Stripe-депозиту</strong>. Це посилює довіру реальним (consented) social proof, який не можна заперечити.</p>
+  </div>
+
+  <h3>Реф-кіт для теплих репів</h3>
+  <p>Кожен партнер-реп (Svitlana, warm RCIC-контакти) отримує готовий compliant набір для першого знайомства з колегами. Без цього кіту — вони не зможуть рекомендувати безпечно в регульованій ніші.</p>
+
+  <ul class="check">
+    <li><strong>4 шаблони RCIC Intake Quiz</strong> — Express Entry, Provincial Nominee, Spousal Sponsorship, Study Permit. Кожен: тільки інтейк, дисклеймер «not immigration advice / intake only», PIPEDA consent-чекбокс, поле для назви практики RCIC і лінку на register.college-ic.ca. Готові до white-label за 48год.</li>
+    <li><strong>90-секундний Loom</strong> — screen recording: ліід проходить квіз → потрапляє на Stripe депозит → RCIC отримує пінг + заповнені дані. Mobile + desktop. Без нарації продукту — тільки workflow.</li>
+    <li><strong>Trust-accounting one-pager (1 стор. A4)</strong> — «Consultation fee earned on delivery, НЕ ретейнер. LF BOSS ніколи не тримає клієнтські кошти. Депозит = операційний рахунок, CICC §44 compliant.» Для RCIC, що переймаються trust-account правилами.</li>
+    <li><strong>CASL-чекліст</strong> — 6 пунктів для RCIC перед надсиланням будь-якого marketing email через платформу: express consent, unsubscribe механізм, sender ID, запис згоди, timestamp, мова повідомлення. Підходить для PIPEDA + CASL одночасно.</li>
+    <li><strong>Design Partner Agreement (1 стор.)</strong> — проста форма: безкоштовний доступ на 90 днів ↔ written-approved відгук + скрин депозиту + 1 вебінар/AMA-участь опційно. Без NDA-перевантаження. Підпис цифровий (DocuSign або Docsketch).</li>
+    <li><strong>Written Approval відгуку — форма</strong> — CICC §45 compliant: клієнт підтверджує (a) відгук правдивий, (b) дозволяє публікацію, (c) ім'я і RCIC-реєстраційний номер дозволено вказати. Будує довіру і захищає репутацію RCIC та LF BOSS.</li>
+    <li><strong>«Чому це безпечно для RCIC» — 1-стор. compliance mirror</strong> — для скептиків: «Наш маркетинговий стандарт тримає той самий рівень written approval, що CICC тримає ваш. §44–46 — ми знаємо і дотримуємось.» Усуває заперечення «а раптом це порушує CICC?»</li>
+    <li><strong>Друковані картки postcard A6 з реальним QR (3 варіанти, assets/cards)</strong> — фізичний touchpoint для нетворкінгу і колег-рефералів. Реплікуються на нову групу 3 свопами: (1) поміняти назву практики RCIC, (2) оновити QR-код на нову landing-URL, (3) роздрукувати локально або через Canva Print. Усуває бар'єр «як дати колезі посилання без спама».</li>
+  </ul>
+
+  <div class="callout">
+    <span class="t">Інсайт</span>
+    <p>Реф-кіт — не «маркетингові матеріали». Це compliance-щит для RCIC, що хоче рекомендувати LF BOSS колегам, але боїться зробити щось не так у регульованій ніші. Зняти страх = розблокувати рекомендацію.</p>
+  </div>
+
+  <div class="callout">
+    <span class="t">Перший крок перед outreach</span>
+    <p>Перед тим, як перший реп отримає цей кіт, оновлюємо соц-доказ на leadfilter.ca на реальні (consented) written-approved відгуки. Реф-кіт зі справжніми відгуками = найсильніший фундамент довіри. Працюємо за правилами реклами в ніші — так будуємо репутацію в ринку 11 733 людей.</p>
+  </div>
+</section>
+
+<section class="section" id="calculator">
+  <span class="eyebrow"><span class="dot"></span>20 · ROI-КАЛЬКУЛЯТОР — ЛІД-МАГНІТ У ДІЇ</span>
+  <h2>«Tax on Free Consultations» — наживо</h2>
+  <p class="lead">Prospect-facing інструмент у фірмовому стилі LF BOSS. RCIC рухає повзунки → бачить свої втрати в $ і скільки повертає LF BOSS. Покрутіть прямо тут:</p>
+  <iframe id="roi-frame" srcdoc="<!DOCTYPE html>
+<html lang=&quot;en&quot;>
+<head>
+<meta charset=&quot;UTF-8&quot; />
+<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; />
+<title>LF BOSS — Free Consultation ROI Calculator</title>
+<meta name=&quot;description&quot; content=&quot;See how much unpaid free consultations are really costing you — and what a deposit-by-default flow recovers. Built on LF BOSS.&quot; />
+
+<link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot; />
+<link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin />
+<link href=&quot;https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap&quot; rel=&quot;stylesheet&quot; />
+
+<style>
+/* ============================================================
+   LF BOSS — ROI Calculator (matches lfboss design system)
+   ============================================================ */
+:root{
+  --brand:#2D5BF0;
+  --brand-ink:#1B3FCB;
+  --brand-600:#2750E0;
+  --brand-50:#EDF2FF;
+  --brand-100:#DFE7FF;
+
+  --money:#15A34A;
+  --money-ink:#0F7D38;
+  --money-50:#E9F7EF;
+
+  --ink:#0B1020;
+  --ink-2:#3B4356;
+  --ink-soft:#5A6376;
+  --ink-faint:#8C95A8;
+
+  --bg:#FFFFFF;
+  --bg-soft:#F5F7FC;
+  --bg-soft-2:#EDF1FA;
+  --dark:#0B1020;
+
+  --line:#E7EBF3;
+  --line-2:#EEF1F8;
+
+  --shadow-sm:0 1px 2px rgba(11,16,32,.06),0 1px 1px rgba(11,16,32,.04);
+  --shadow-md:0 10px 30px -12px rgba(11,16,32,.16),0 2px 8px rgba(11,16,32,.05);
+  --shadow-lg:0 30px 60px -22px rgba(11,16,32,.22),0 6px 18px rgba(11,16,32,.06);
+  --shadow-brand:0 14px 34px -10px rgba(45,91,240,.45);
+
+  --r-sm:12px;
+  --r:16px;
+  --r-lg:22px;
+  --r-xl:28px;
+
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  line-height:1.5;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:0 clamp(16px,4vw,24px) 56px;
+}
+::selection{background:var(--brand);color:#fff}
+
+h1,h2,h3{letter-spacing:-.03em;line-height:1.04;font-weight:800;color:var(--ink)}
+
+/* ---------- shared eyebrow pill ---------- */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  background:var(--brand-50);color:var(--brand-ink);
+  padding:7px 13px;border-radius:999px;
+}
+.eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--money);box-shadow:0 0 0 4px var(--money-50)}
+
+/* ---------- HEADER ---------- */
+.header{
+  width:100%;max-width:760px;
+  padding:clamp(40px,7vw,72px) 0 32px;
+  text-align:center;
+}
+.header h1{
+  font-size:clamp(30px,5.4vw,52px);
+  font-weight:900;letter-spacing:-.035em;line-height:1.04;
+  margin:22px auto 16px;max-width:18ch;
+}
+.header h1 .text-grad{
+  background:linear-gradient(120deg,var(--brand),#5b86ff);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.header .sub{
+  font-size:clamp(16px,2vw,19px);color:var(--ink-soft);line-height:1.55;
+  max-width:540px;margin:0 auto;
+}
+
+/* ---------- generic card ---------- */
+.card{
+  width:100%;max-width:760px;
+  background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);
+  box-shadow:var(--shadow-md);
+  padding:clamp(26px,4vw,40px);
+  margin-bottom:18px;
+}
+.card-title{
+  font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink-faint);margin-bottom:26px;
+}
+
+/* ---------- INPUTS ---------- */
+.input-group{margin-bottom:28px}
+.input-group:last-child{margin-bottom:0}
+
+.input-label{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px;gap:14px}
+.input-label-text{font-size:15.5px;font-weight:600;color:var(--ink)}
+.input-label-value{
+  font-weight:800;font-size:22px;letter-spacing:-.02em;color:var(--brand);
+  min-width:84px;text-align:right;white-space:nowrap;
+}
+
+.slider-wrap{position:relative;height:34px;display:flex;align-items:center}
+input[type=&quot;range&quot;]{
+  -webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:6px;
+  background:var(--bg-soft-2);outline:none;cursor:pointer;
+}
+input[type=&quot;range&quot;]::-webkit-slider-thumb{
+  -webkit-appearance:none;appearance:none;width:24px;height:24px;border-radius:50%;
+  background:var(--brand);cursor:pointer;border:3px solid #fff;
+  box-shadow:0 4px 12px -2px rgba(45,91,240,.5),0 0 0 1px var(--line);
+  transition:box-shadow .15s var(--ease),transform .15s var(--ease);
+}
+input[type=&quot;range&quot;]::-webkit-slider-thumb:hover{transform:scale(1.08);box-shadow:0 6px 16px -2px rgba(45,91,240,.6),0 0 0 1px var(--line)}
+input[type=&quot;range&quot;]::-moz-range-thumb{
+  width:24px;height:24px;border-radius:50%;background:var(--brand);cursor:pointer;border:3px solid #fff;
+  box-shadow:0 4px 12px -2px rgba(45,91,240,.5);
+}
+.slider-labels{display:flex;justify-content:space-between;margin-top:9px;font-size:12px;font-weight:500;color:var(--ink-faint)}
+
+/* number input */
+.number-input-wrap{display:flex;align-items:center;gap:12px;margin-top:2px}
+.number-input-prefix{font-size:20px;font-weight:800;color:var(--ink-faint)}
+input[type=&quot;number&quot;]{
+  background:#fff;border:1.5px solid var(--line);border-radius:var(--r-sm);
+  color:var(--ink);font-family:inherit;font-weight:800;font-size:22px;letter-spacing:-.02em;
+  padding:11px 16px;width:140px;outline:none;transition:border-color .15s,box-shadow .15s;
+}
+input[type=&quot;number&quot;]:focus{border-color:var(--brand);box-shadow:0 0 0 4px var(--brand-50)}
+.input-hint{font-size:13px;color:var(--ink-faint);margin-top:9px;font-weight:500}
+
+/* ---------- RESULTS ---------- */
+.results-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:30px}
+.metric{
+  background:var(--bg-soft);border:1px solid var(--line-2);border-radius:var(--r);
+  padding:22px 16px;text-align:center;
+}
+.metric.danger{background:var(--brand-50);border-color:var(--brand-100)}
+.metric-value{
+  font-weight:900;font-size:clamp(24px,4vw,38px);letter-spacing:-.03em;color:var(--ink);
+  line-height:1;margin-bottom:9px;transition:color .2s;
+}
+.metric.danger .metric-value{color:var(--brand)}
+.metric-label{font-size:12.5px;font-weight:600;color:var(--ink-soft);line-height:1.35}
+
+.divider{height:1px;background:var(--line);margin:30px 0}
+
+/* ---------- LF BOSS CHANGE BLOCK (money/green) ---------- */
+.lfboss-block{
+  background:var(--money-50);border:1px solid #C9EAD5;border-radius:var(--r-lg);
+  padding:clamp(22px,3.4vw,28px);
+}
+.lfboss-title{
+  display:flex;align-items:center;gap:11px;
+  font-size:17px;font-weight:800;letter-spacing:-.01em;color:var(--ink);margin-bottom:18px;
+}
+.lfboss-title .badge{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  background:var(--money);color:#fff;padding:5px 11px;border-radius:999px;
+}
+
+.benefit-list{list-style:none;display:flex;flex-direction:column;gap:13px}
+.benefit-list li{
+  display:flex;align-items:flex-start;gap:12px;
+  font-size:15px;line-height:1.55;color:var(--ink-2);
+}
+.benefit-list li .tick{
+  flex:none;width:20px;height:20px;border-radius:50%;background:var(--money);
+  display:grid;place-items:center;margin-top:1px;
+}
+.benefit-list li .tick svg{width:12px;height:12px;color:#fff}
+/* highlights flow inline — NO width / inline-block / grid on phrases */
+.benefit-list li strong{color:var(--money-ink);font-weight:800}
+.benefit-list li .hl{color:var(--ink);font-weight:700}
+
+/* savings row */
+.savings-row{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  background:#fff;border:1px solid #C9EAD5;border-radius:var(--r);
+  padding:16px 20px;margin-top:18px;
+}
+.savings-label{font-size:13.5px;color:var(--ink-soft);font-weight:600;max-width:60ch}
+.savings-value{font-weight:900;font-size:24px;letter-spacing:-.03em;color:var(--money-ink);white-space:nowrap}
+
+/* ---------- CTA ---------- */
+.cta-card{
+  width:100%;max-width:760px;
+  background:var(--ink);color:#fff;border-radius:var(--r-xl);
+  box-shadow:var(--shadow-lg);
+  padding:clamp(32px,5vw,48px);text-align:center;
+  margin-bottom:18px;position:relative;overflow:hidden;
+}
+.cta-card::after{
+  content:&quot;&quot;;position:absolute;right:-120px;top:-120px;width:360px;height:360px;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(45,91,240,.5),transparent 70%);pointer-events:none;
+}
+.cta-card .inner{position:relative;z-index:1}
+.cta-heading{
+  font-size:clamp(22px,3.6vw,32px);font-weight:900;letter-spacing:-.03em;color:#fff;
+  margin-bottom:14px;line-height:1.1;max-width:20ch;margin-inline:auto;
+}
+.cta-sub{font-size:clamp(15px,2vw,17px);color:rgba(255,255,255,.7);margin-bottom:30px;line-height:1.55;max-width:46ch;margin-inline:auto}
+.cta-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  background:var(--brand);color:#fff;font-weight:700;font-size:17px;letter-spacing:-.01em;
+  padding:18px 34px;border-radius:var(--r-sm);text-decoration:none;
+  box-shadow:var(--shadow-brand);transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .2s;
+}
+.cta-btn:hover{background:var(--brand-600);transform:translateY(-2px);box-shadow:0 20px 40px -10px rgba(45,91,240,.55)}
+.cta-btn svg{width:18px;height:18px}
+
+/* ---------- DISCLAIMER ---------- */
+.disclaimer{
+  width:100%;max-width:760px;text-align:center;
+  font-size:12px;color:var(--ink-faint);line-height:1.6;font-weight:500;padding:0 8px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:600px){
+  .results-grid{grid-template-columns:1fr;gap:12px}
+  .metric{
+    display:flex;align-items:center;gap:18px;text-align:left;padding:18px 20px;
+  }
+  .metric-value{font-size:30px;margin-bottom:0;min-width:120px}
+  .savings-row{flex-direction:column;align-items:flex-start;gap:6px}
+  input[type=&quot;number&quot;]{font-size:19px;width:120px}
+}
+@media (max-width:400px){
+  body{padding:0 12px 44px}
+  .header{padding:32px 0 24px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<div class=&quot;header&quot;>
+  <span class=&quot;eyebrow&quot;><span class=&quot;dot&quot;></span>LF BOSS · ROI Calculator</span>
+  <h1>How much are <span class=&quot;text-grad&quot;>free consultations</span> actually costing you?</h1>
+  <p class=&quot;sub&quot;>Move the sliders and see your real numbers — live, right now.</p>
+</div>
+
+<!-- ===================== INPUTS ===================== -->
+<div class=&quot;card&quot;>
+  <div class=&quot;card-title&quot;>Your current situation</div>
+
+  <div class=&quot;input-group&quot;>
+    <div class=&quot;input-label&quot;>
+      <span class=&quot;input-label-text&quot;>Free consultations per week</span>
+      <span class=&quot;input-label-value&quot; id=&quot;calls-val&quot;>5</span>
+    </div>
+    <div class=&quot;slider-wrap&quot;>
+      <input type=&quot;range&quot; id=&quot;calls&quot; min=&quot;1&quot; max=&quot;30&quot; value=&quot;5&quot; step=&quot;1&quot;>
+    </div>
+    <div class=&quot;slider-labels&quot;><span>1</span><span>30</span></div>
+  </div>
+
+  <div class=&quot;input-group&quot;>
+    <div class=&quot;input-label&quot;>
+      <span class=&quot;input-label-text&quot;>Average call duration (minutes)</span>
+      <span class=&quot;input-label-value&quot; id=&quot;duration-val&quot;>45 min</span>
+    </div>
+    <div class=&quot;slider-wrap&quot;>
+      <input type=&quot;range&quot; id=&quot;duration&quot; min=&quot;15&quot; max=&quot;120&quot; value=&quot;45&quot; step=&quot;5&quot;>
+    </div>
+    <div class=&quot;slider-labels&quot;><span>15 min</span><span>120 min</span></div>
+  </div>
+
+  <div class=&quot;input-group&quot;>
+    <div class=&quot;input-label&quot;>
+      <span class=&quot;input-label-text&quot;>Your hourly rate ($/hour)</span>
+    </div>
+    <div class=&quot;number-input-wrap&quot;>
+      <span class=&quot;number-input-prefix&quot;>$</span>
+      <input type=&quot;number&quot; id=&quot;rate&quot; min=&quot;10&quot; max=&quot;2000&quot; value=&quot;150&quot; step=&quot;10&quot;>
+      <span class=&quot;input-hint&quot;>/hour</span>
+    </div>
+    <div class=&quot;input-hint&quot;>What your consulting time is actually worth</div>
+  </div>
+</div>
+
+<!-- ===================== RESULTS ===================== -->
+<div class=&quot;card&quot;>
+  <div class=&quot;card-title&quot;>Your unpaid time — right now</div>
+
+  <div class=&quot;results-grid&quot;>
+    <div class=&quot;metric&quot;>
+      <div class=&quot;metric-value&quot; id=&quot;hours-month&quot;>—</div>
+      <div class=&quot;metric-label&quot;>Unpaid hours<br>per month</div>
+    </div>
+    <div class=&quot;metric danger&quot;>
+      <div class=&quot;metric-value&quot; id=&quot;lost-month&quot;>—</div>
+      <div class=&quot;metric-label&quot;>Lost revenue<br>per month</div>
+    </div>
+    <div class=&quot;metric danger&quot;>
+      <div class=&quot;metric-value&quot; id=&quot;lost-year&quot;>—</div>
+      <div class=&quot;metric-label&quot;>Lost revenue<br>per year</div>
+    </div>
+  </div>
+
+  <div class=&quot;divider&quot;></div>
+
+  <!-- LF BOSS BLOCK -->
+  <div class=&quot;lfboss-block&quot;>
+    <div class=&quot;lfboss-title&quot;>
+      <span class=&quot;badge&quot;>
+        <svg viewBox=&quot;0 0 24 24&quot; width=&quot;13&quot; height=&quot;13&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;3&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;><path d=&quot;M20 6 9 17l-5-5&quot;/></svg>
+        With LF BOSS
+      </span>
+      What changes
+    </div>
+    <ul class=&quot;benefit-list&quot;>
+      <li>
+        <span class=&quot;tick&quot;><svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;3.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;><path d=&quot;M20 6 9 17l-5-5&quot;/></svg></span>
+        <span>A <strong>deposit before the call</strong> filters out tire-kickers instantly — only serious buyers ever reach your calendar.</span>
+      </li>
+      <li>
+        <span class=&quot;tick&quot;><svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;3.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;><path d=&quot;M20 6 9 17l-5-5&quot;/></svg></span>
+        <span>You reclaim up to <strong id=&quot;time-back&quot;>—</strong> of your monthly consulting time by ending no-shows and unpaid calls.</span>
+      </li>
+      <li>
+        <span class=&quot;tick&quot;><svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;3.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;><path d=&quot;M20 6 9 17l-5-5&quot;/></svg></span>
+        <span>Free-consultation slots turn into <strong>paid discovery sessions</strong> — or stay free, now backed by a deposit as a commitment signal.</span>
+      </li>
+      <li>
+        <span class=&quot;tick&quot;><svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;3.5&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;><path d=&quot;M20 6 9 17l-5-5&quot;/></svg></span>
+        <span>Every &quot;free&quot; call becomes a <span class=&quot;hl&quot;>qualified lead with skin in the game</span>.</span>
+      </li>
+    </ul>
+
+    <div class=&quot;savings-row&quot;>
+      <span class=&quot;savings-label&quot;>Potential monthly revenue recovery (est. 70% of lost time converted)</span>
+      <span class=&quot;savings-value&quot; id=&quot;potential-recovery&quot;>—</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== CTA ===================== -->
+<div class=&quot;cta-card&quot;>
+  <div class=&quot;inner&quot;>
+    <div class=&quot;cta-heading&quot;>Stop giving away your expertise for free.</div>
+    <p class=&quot;cta-sub&quot;>LF BOSS adds a deposit requirement before any consultation — so your calendar fills with buyers, not browsers. Setup takes minutes.</p>
+    <a href=&quot;https://lfboss.com&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;cta-btn&quot;>
+      Get LF BOSS — lfboss.com
+      <svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2.4&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;><path d=&quot;M5 12h14M13 6l6 6-6 6&quot;/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- ===================== DISCLAIMER ===================== -->
+<div class=&quot;disclaimer&quot;>
+  These figures are estimates based on your inputs, not a guarantee of results. Individual outcomes vary depending on your industry, offer, and client base. LF BOSS results depend on implementation and market conditions.
+</div>
+
+<script>
+  const callsSlider = document.getElementById('calls');
+  const durationSlider = document.getElementById('duration');
+  const rateInput = document.getElementById('rate');
+
+  const callsVal = document.getElementById('calls-val');
+  const durationVal = document.getElementById('duration-val');
+
+  const hoursMonth = document.getElementById('hours-month');
+  const lostMonth = document.getElementById('lost-month');
+  const lostYear = document.getElementById('lost-year');
+  const timeBack = document.getElementById('time-back');
+  const potentialRecovery = document.getElementById('potential-recovery');
+
+  const BRAND = '#2D5BF0';
+  const TRACK = '#EDF1FA';
+
+  function fmt(n){
+    if (n >= 1000){
+      return '$' + (n / 1000).toFixed(n >= 10000 ? 0 : 1) + 'K';
+    }
+    return '$' + Math.round(n).toLocaleString();
+  }
+
+  function fmtHours(h){
+    if (h < 1) return Math.round(h * 60) + ' min';
+    return h % 1 === 0 ? h + ' hrs' : h.toFixed(1) + ' hrs';
+  }
+
+  function calculate(){
+    const calls = parseInt(callsSlider.value) || 0;
+    const duration = parseInt(durationSlider.value) || 0;
+    const rate = parseFloat(rateInput.value) || 0;
+
+    const hoursPerCall = duration / 60;
+    const callsPerMonth = calls * 4.33;
+    const totalHoursPerMonth = hoursPerCall * callsPerMonth;
+    const totalLostPerMonth = totalHoursPerMonth * rate;
+    const totalLostPerYear = totalLostPerMonth * 12;
+
+    const timeRecoveredHours = totalHoursPerMonth * 0.7;
+    const recoveredRevenue = timeRecoveredHours * rate;
+
+    callsVal.textContent = calls;
+    durationVal.textContent = duration + ' min';
+
+    hoursMonth.textContent = fmtHours(Math.round(totalHoursPerMonth * 10) / 10);
+    lostMonth.textContent = fmt(totalLostPerMonth);
+    lostYear.textContent = fmt(totalLostPerYear);
+    timeBack.textContent = fmtHours(Math.round(timeRecoveredHours * 10) / 10);
+    potentialRecovery.textContent = fmt(recoveredRevenue) + '/mo';
+
+    updateSliderFill(callsSlider, 1, 30);
+    updateSliderFill(durationSlider, 15, 120);
+  }
+
+  function updateSliderFill(slider, min, max){
+    const val = ((slider.value - min) / (max - min)) * 100;
+    slider.style.background = 'linear-gradient(to right, ' + BRAND + ' 0%, ' + BRAND + ' ' + val + '%, ' + TRACK + ' ' + val + '%, ' + TRACK + ' 100%)';
+  }
+
+  callsSlider.addEventListener('input', calculate);
+  durationSlider.addEventListener('input', calculate);
+  rateInput.addEventListener('input', calculate);
+
+  rateInput.addEventListener('blur', () => {
+    if (!rateInput.value || rateInput.value < 10) rateInput.value = 10;
+    if (rateInput.value > 2000) rateInput.value = 2000;
+    calculate();
+  });
+
+  calculate();
+</script>
+</body>
+</html>
+" title="ROI Calculator" style="width:100%;border:1px solid var(--line);border-radius:18px;background:#fff;min-height:880px;display:block"></iframe>
+  <div class="callout"><span class="t">Як використовуємо</span><p>Лід-магніт на лендингу + показуємо в демо-дзвінку: «введіть свої цифри» → клієнт сам себе продає.</p></div>
+  <script>(function(){var f=document.getElementById('roi-frame');function fit(){try{var d=f.contentWindow.document;d.documentElement.style.minHeight='0';d.body.style.minHeight='0';f.style.height=(d.body.scrollHeight+40)+'px';}catch(e){}}f.addEventListener('load',function(){fit();setTimeout(fit,300);setTimeout(fit,900);});window.addEventListener('resize',fit);})();</script>
+</section>
+<section class="section" id="plan">
+  <span class="eyebrow"><span class="dot"></span>21 · 90-ДЕННИЙ ПЛАН</span>
+  <h2>90 днів: <strong>що робимо по тижнях</strong></h2>
+  <p class="lead">Три місяці, три режими: <strong>Місяць 1</strong> — довести продукт до ринку і зробити перші рухи, <strong>Місяць 2</strong> — увімкнути власні соцмережі, партнерів і аутріч, <strong>Місяць 3</strong> — активний маркетинг і масштаб. Коротко, конкретно, з відповідальним по кожній задачі.</p>
+
+  <div class="timeline">
+    <div class="phase">
+      <div class="days">Дні 1–30</div>
+      <div class="ph">Місяць 1 · Продукт готовий + перші рухи</div>
+      <p>Доводимо сайт і соц-доказ до ладу, робимо сайт видимим, гріємо пошту, фіксимо продукт, перші community-тачі, стартує воронка вендорів.</p>
+    </div>
+    <div class="phase">
+      <div class="days">Дні 31–60</div>
+      <div class="ph">Місяць 2 · Соцмережі + партнери + аутріч</div>
+      <p>Партнери/Svitlana ведуть наші соцмережі за нашою стратегією, ведемо соцмережі партнерів, база з реєстру CICC, founding-партнери, вендори, перший вебінар.</p>
+    </div>
+    <div class="phase">
+      <div class="days">Дні 61–90</div>
+      <div class="ph">Місяць 3 · Активний маркетинг + масштаб</div>
+      <p>Маркетинг на теплу аудиторію Svitlana, кейси з реальними цифрами, реплікація шаблону, вендори масштабуються.</p>
+    </div>
+  </div>
+
+  <!-- ============== МІСЯЦЬ 1 ============== -->
+  <span class="pill lime">Місяць 1 · Дні 1–30</span>
+  <h3 style="margin:14px 0 6px">Продукт готовий до ринку — <strong>і перші рухи</strong></h3>
+
+  <div class="accent">
+    <p><strong>Логіка місяця:</strong> паралельно доводимо продукт до painkiller-стану і робимо тиху підготовку — сайт видимий, пошта гріється, перші тачі в спільнотах, стартує воронка вендорів. Активний аутріч не вмикаємо, поки flow квіз→депозит→інвойс не працює end-to-end.</p>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Тиждень</th><th>Задача</th><th>Хто</th><th>Що на виході</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Тиж 1</strong></td>
+        <td>Довести сайт до ладу: оновити соц-доказ на реальні (consented) відгуки, відполірувати «Get Started», апгрейди</td>
+        <td>маркетинг + продуктова сторона</td>
+        <td>Сайт із реальними written-approved відгуками замість поточних placeholder-ів, робочі шляхи входу, працюємо за правилами реклами в ніші</td>
+      </tr>
+      <tr>
+        <td><strong>Тиж 1</strong></td>
+        <td>Зробити сайт ВИДИМИМ — SEO, індексація</td>
+        <td>маркетинг</td>
+        <td>Сайт індексується пошуком, базовий on-page SEO на місці</td>
+      </tr>
+      <tr>
+        <td><strong>Тиж 1</strong></td>
+        <td>Почати прогрів пошти в Instantly — акаунти + домени</td>
+        <td>маркетинг</td>
+        <td>Окремі домени під outreach, прогрів запущено</td>
+      </tr>
+      <tr>
+        <td><strong>Тиж 2</strong></td>
+        <td>Продуктові фікси: Quiz-to-Cash flow як єдиний guided-потік</td>
+        <td>продуктова сторона / Vitaly</td>
+        <td>Робочий цикл квіз → депозит → інвойс в одному потоці, без ручних дій</td>
+      </tr>
+      <tr>
+        <td><strong>Тиж 2</strong></td>
+        <td>Авто-dunning / payment-chasing</td>
+        <td>продуктова сторона / Vitaly</td>
+        <td>Автоматичні нагадування про несплачені інвойси, 0 ручних follow-up</td>
+      </tr>
+      <tr>
+        <td><strong>Тиж 2</strong></td>
+        <td>RCIC-шаблон інтейку + відео «налаштуй за 2 хв»</td>
+        <td>продуктова сторона / Vitaly</td>
+        <td>Готовий квіз-шаблон для RCIC + вбудоване відео, blank-state закрито</td>
+      </tr>
+      <tr>
+        <td><strong>Тиж 1–2</strong></td>
+        <td>Створити відео для сайту: окремо <strong>рекламне (промо) відео</strong> + <strong>2-хв Loom</strong> для всередини платформи (онбординг «налаштуй за 2 хв»)</td>
+        <td>маркетинг + продуктова сторона</td>
+        <td>Промо-відео на сайт (швидко пояснює цінність) + 2-хв Loom у продукті (онбординг)</td>
+      </tr>
+      <tr>
+        <td><strong>Тиж 3–4</strong></td>
+        <td>Підключити спілкування у ГРУПАХ / спільнотах</td>
+        <td>Svitlana + маркетинг</td>
+        <td>Перші тачі в профільних RCIC-спільнотах через Svitlana</td>
+      </tr>
+      <tr>
+        <td><strong>Тиж 3–4</strong></td>
+        <td>СТАРТ пошуку ВЕНДОРІВ — B2B2C-двигун</td>
+        <td>маркетинг + дистрибуція</td>
+        <td>Список вендорів, які впроваджують LF BOSS для своїх клієнтів і команд; перші розмови</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <span class="t">🎯 Ціль Місяця 1</span>
+    <p>Продукт готовий (flow квіз→депозит→інвойс працює end-to-end) · пошта гріється · сайт видимий · перші community-тачі зроблено · воронка вендорів стартувала.</p>
+  </div>
+
+  <!-- ============== МІСЯЦЬ 2 ============== -->
+  <span class="pill lime">Місяць 2 · Дні 31–60</span>
+  <h3 style="margin:14px 0 6px">Власні соцмережі + партнери + <strong>аутріч</strong></h3>
+
+  <table>
+    <thead>
+      <tr><th>Тиждень</th><th>Задача</th><th>Хто</th><th>Що на виході</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Тиж 5–6</strong></td>
+        <td>Вмикаємо НАШІ соцмережі — короткі + довгі відео (ведуть партнери/Svitlana за нашою стратегією, я задаю теми й напрям)</td>
+        <td>Svitlana/партнери + маркетинг</td>
+        <td>Регулярний постинг про продукт і кейси на власних каналах — знімають і постять партнери за нашими темами</td>
+      </tr>
+      <tr>
+        <td><strong>Тиж 5–6</strong></td>
+        <td>Допомагаємо Svitlana та іншим партнерам/вендорам ВЕСТИ їхні соцмережі</td>
+        <td>маркетинг + партнери</td>
+        <td>Партнери активно постять і привертають увагу — наш важіль на чужих аудиторіях</td>
+      </tr>
+      <tr>
+        <td><strong>Тиж 5–6</strong></td>
+        <td>Зібрати email-базу: реєстр CICC → Hunter/Apollo</td>
+        <td>маркетинг</td>
+        <td>База валідних RCIC-адрес з публічного реєстру, збагачена й верифікована</td>
+      </tr>
+      <tr>
+        <td><strong>Тиж 5–6</strong></td>
+        <td>Спілкування в <strong>Reddit</strong>: корисні відповіді й коментарі в профільних сабах (r/ImmigrationCanada, r/canadavisa, r/immigration) — value-first, без самореклами (правило 9:1)</td>
+        <td>Svitlana/партнери + маркетинг</td>
+        <td>Репутація й присутність у RCIC-сабах; перші органічні згадки там, де доречно</td>
+      </tr>
+      <tr>
+        <td><strong>Тиж 5–6</strong></td>
+        <td>Спілкування у <strong>Facebook</strong>-групах RCIC / immigration practitioners — корисні відповіді на реальні питання, value-first</td>
+        <td>Svitlana/партнери + маркетинг</td>
+        <td>Активна присутність у профільних FB-групах; теплі контакти й довіра</td>
+      </tr>
+      <tr>
+        <td><strong>Тиж 7–8</strong></td>
+        <td>Instantly CASL-секвенси + LinkedIn value-first</td>
+        <td>маркетинг</td>
+        <td>CASL-compliant секвенси по базі + value-first конекти в LinkedIn з шаблоном квіза</td>
+      </tr>
+      <tr>
+        <td><strong>Тиж 7–8</strong></td>
+        <td>Підписати founding-партнерів + перших вендорів</td>
+        <td>маркетинг + дистрибуція</td>
+        <td>Угоди з партнерами (Svitlana = якірний) + перші вендори, що впроваджують LF BOSS</td>
+      </tr>
+      <tr>
+        <td><strong>Тиж 7–8</strong></td>
+        <td>Перший вебінар з RCIC-партнером</td>
+        <td>маркетинг + партнери</td>
+        <td>Live-вебінар «як RCIC заробляє на LF BOSS» з реальним партнером</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <span class="t">🎯 Ціль Місяця 2</span>
+    <p>Активні партнери й вендори підписані · перші активації пішли · спільноти теплі · власні та партнерські соцмережі працюють на нас.</p>
+  </div>
+
+  <!-- ============== МІСЯЦЬ 3 ============== -->
+  <span class="pill lime">Місяць 3 · Дні 61–90</span>
+  <h3 style="margin:14px 0 6px">Активний маркетинг + <strong>масштаб</strong></h3>
+
+  <table>
+    <thead>
+      <tr><th>Тиждень</th><th>Задача</th><th>Хто</th><th>Що на виході</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Тиж 9–10</strong></td>
+        <td>Активний маркетинг на аудиторію Svitlana + інші теплі контакти</td>
+        <td>маркетинг + Svitlana</td>
+        <td>Кампанія на існуючі теплі аудиторії — нові активації з найдешевшого джерела</td>
+      </tr>
+      <tr>
+        <td><strong>Тиж 9–10</strong></td>
+        <td>Кейси з реальними результатами</td>
+        <td>маркетинг</td>
+        <td>Case-study з конкретним доходом RCIC на платформі — паливо для соцмереж і аутрічу</td>
+      </tr>
+      <tr>
+        <td><strong>Тиж 11–12</strong></td>
+        <td>Реплікація шаблону (картка + QR) на нову групу</td>
+        <td>маркетинг + дистрибуція</td>
+        <td>Готовий шаблон активації застосовано до нової ніші/групи</td>
+      </tr>
+      <tr>
+        <td><strong>Тиж 11–12</strong></td>
+        <td>Вендори масштабуються</td>
+        <td>дистрибуція + Vitaly</td>
+        <td>Перші вендори тиражують LF BOSS на свої команди та клієнтські бази</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout dark">
+    <span class="t">🚪 День-90 — ворота рішення</span>
+    <p>Дивимось, чи <strong>доведений клин</strong> — чи стабільно активуються нові користувачі. Якщо так → <strong>масштабуємо найкращий канал</strong>. Ціль на 90 днів — не конкретна цифра доходу, а <strong>доведена воронка + база партнерів/вендорів + перші клієнти</strong>. Звідси апсайд великий: дохід у LF BOSS уже є, ми будуємо машину, що його множить.</p>
+  </div>
+
+  <div class="grid c2">
+    <div class="card">
+      <span class="ico">✅</span>
+      <h4>ЩО РОБИМО</h4>
+      <p>М1 — продукт до чистоти + видимий сайт + прогрів пошти + перші тачі та воронка вендорів · М2 — наші й партнерські соцмережі, база CICC, аутріч, founding-партнери та вендори, вебінар · М3 — маркетинг на теплу аудиторію, кейси, реплікація шаблону, масштаб вендорів.</p>
+    </div>
+    <div class="card">
+      <span class="ico">❌</span>
+      <h4>ЧОГО НЕ РОБИМО</h4>
+      <p>НЕ аутріч, поки flow не готовий end-to-end · оновлюємо соц-доказ на реальні (consented) відгуки · НЕ платна реклама до доведеного клина · НЕ масштаб без доведеної активації · НЕ нова група без робочого шаблону.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="level1">
+  <span class="eyebrow"><span class="dot"></span>22 · Рівень 1: Теплі ресурси</span>
+  <h2>Svitlana, репи і механіка рефералів</h2>
+  <p class="lead">Регульована аудиторія рухається через «своїх». У ринку з 11 994 RCIC, де кожен знає сусіда по Slack, одне тепле інтро від довіреної особи варте 50 холодних листів. Рівень 1 — єдиний канал, який активується ДО будь-якого аутрічу, і єдиний, що генерує першу хвилю справжніх written-approved відгуків.</p>
+
+  <div class="callout dark">
+    <span class="t">Порядок запуску</span>
+    <p>Рівень 1 активується паралельно з першим кроком підготовки: оновлюємо соціальний доказ на сайті — замінюємо placeholder-відгуки реальними (consented) відгуками від партнерів + перевіряємо, щоб «Get Started» вів на повноцінний онбординг. Теплий аутріч і живі відгуки йдуть рука в руку.</p>
+  </div>
+
+  <h3>Svitlana Asadchykh — Design Partner #0</h3>
+  <p class="lead">Єдиний реальний early adopter — потенційний автор «LF BOSS Standard» (відгук фіналізується ТІЛЬКИ після верифікації в реєстрі CICC, з фіксацією реєстраційного номера). Це не просто відгук — це голос практикуючого RCIC, якому CICC-спільнота повірить. Якщо верифікація не пройдена — Фаза 1 потребує іншого джерела першого social proof.</p>
+
+  <div class="grid c3">
+    <div class="stat"><b>Крок 1</b><span>Верифікація незалежності</span></div>
+    <div class="stat"><b>Крок 2</b><span>Оформити як Founding Partner #1</span></div>
+    <div class="stat"><b>Крок 3</b><span>3–5 теплих інтро до колег</span></div>
+  </div>
+
+  <div class="grid c2">
+    <div class="card">
+      <span class="ico">🔍</span>
+      <h4>Верифікація (до будь-якого кроку)</h4>
+      <p>LinkedIn профіль + реєстр CICC (<a href="https://register.college-ic.ca/">register.college-ic.ca</a>) → переконатись, що це незалежний, активний RCIC у good standing. Підтверджений статус у реєстрі — гарантія credibility для всього social proof, що йде від цього партнера.</p>
+    </div>
+    <div class="card">
+      <span class="ico">🤝</span>
+      <h4>Оформлення Founding Design Partner</h4>
+      <p>Запропонувати: безкоштовний доступ на 90 днів (як у стандартному Design Partner Agreement, секція 07), з опцією продовження до 6 міс для Design Partner #0 ↔ written-approved відгук + скрін реально зібраного депозиту через LF BOSS. Підписати 1-сторінковий Design Partner Agreement (шаблон у Offer Kit). Це найсильніший соціальний доказ — голос практикуючого RCIC з реальним результатом, оформлений з письмовим дозволом (CICC §45 compliant).</p>
+    </div>
+  </div>
+
+  <div class="accent">
+    <h4>Скрипт інтро (Svitlana → нас, 2–3 речення)</h4>
+    <p>«Svitlana, ти вже в LF BOSS і знаєш результат. Чи можеш познайомити нас із 3–5 RCIC зі свого кола — особливо тими, хто тільки починає практику або скаржиться на tire-kickers та неоплачені консультації? Ми налаштуємо їм квіз безкоштовно за 48 годин.»</p>
+  </div>
+
+  <div class="callout">
+    <span class="t">Чому тепле інтро через Svitlana</span>
+    <p>Svitlana — англомовний RCIC-конектор, перший партнер, що відкриває двері до реєстру CICC через особисте 1:1 інтро. Регульована аудиторія рухається через «своїх» — одне тепле знайомство від довіреної особи варте 50 холодних листів, незалежно від мови чи походження.</p>
+  </div>
+
+  <h3>Репи при міграційних центрах — теплі інтро</h3>
+
+  <div class="grid c2">
+    <div class="card">
+      <span class="ico">📋</span>
+      <h4>Хто це</h4>
+      <p>RCIC, що практикують при Settlement Houses, Welcome Centres, ACCES Employment та інших центрах. Зазвичай нові (0–3 роки), часто соло, обробляють великий потік клієнтів без автоматизації. Точний ICP. Vitaly через VIGO House / VIGO Windows має warm-зв'язки в канадській RCIC-спільноті.</p>
+    </div>
+    <div class="card">
+      <span class="ico">🎁</span>
+      <h4>Реф-кіт для теплого каналу</h4>
+      <ul class="clean">
+        <li>1-pager «LF BOSS для RCIC: що це і чому безпечно» (compliance-mirror: «ті самі стандарти письмового погодження, що CICC вимагає від вас»)</li>
+        <li>90-сек Loom: шлях лід → квіз → Stripe-депозит → підтвердження</li>
+        <li>Готовий white-label квіз під їхню нішу (Express Entry / PNP / spousal / study-permit) за 48 годин</li>
+        <li>Форма written-approval відгуку (CICC §45 compliant)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="t">Скрипт інтро (маркетинг-сторона → реп при центрі, перший контакт)</span>
+    <p>«Привіт [Ім'я]. Ми працюємо з LF BOSS — інструментом, що допомагає RCIC брати депозит до першого дзвінка й автоматично відсіювати tire-kickers. Знаємо, що у вас великий потік і багато безкоштовних консультацій. Чи можемо налаштувати вам квіз безкоштовно і показати результат за 48 годин? Ніяких зобов'язань.»</p>
+  </div>
+
+  <h3>Механіка рефералів (Founding Partner Engine)</h3>
+
+  <div class="grid c3">
+    <div class="card">
+      <span class="ico">⚙️</span>
+      <h4>Тригер реферала</h4>
+      <p>Перший депозит упав у Stripe партнера → авто-сповіщення → ми пишемо вітання + питаємо: «Чи є хтось у вашому колі, кому ми можемо налаштувати те саме?»</p>
+    </div>
+    <div class="card">
+      <span class="ico">💰</span>
+      <h4>Реф-винагорода (Дні 46+)</h4>
+      <p><strong>20% recurring</strong> (Tier 1 RCIC) або <strong>25%</strong> (Tier 2 — хто веде спільноту). Деталі тірів і розрахунок — секція 11.</p>
+    </div>
+    <div class="card">
+      <span class="ico">📣</span>
+      <h4>Social proof flywheel</h4>
+      <p>Written-approved відгук + скрін депозиту → в LinkedIn-пост → у реф-кіт для наступного теплого контакту → нові партнери → більше відгуків. Перший цикл запускається з Svitlana.</p>
+    </div>
+  </div>
+
+  <div class="callout warn">
+    <span class="t">Правило реф-програми</span>
+    <p>Реф-структура: лише два рівні (оператор → новий оператор), без sub-affiliate chains — чиста, прозора модель, що відповідає стандартам рекламної практики в ніші. Перед запуском — короткий юридичний review (≈ 1 год) для фінального підтвердження структури.</p>
+  </div>
+
+  <div class="timeline">
+    <div class="phase">
+      <div class="days">Дні 1–7</div>
+      <div class="ph">Підготовка сайту + верифікація Svitlana</div>
+      <p>Оновити соціальний доказ на сайті — посилити реальними (consented) відгуками від перших партнерів. Перевірити Svitlana в реєстрі CICC. Підписати Design Partner Agreement #1. Налаштувати квіз під її нішу за 48 год.</p>
+    </div>
+    <div class="phase">
+      <div class="days">Дні 7–14</div>
+      <div class="ph">Збір перших інтро</div>
+      <p>Svitlana дає 3–5 англомовних інтро до колег-RCIC. Vitaly дає список warm RCIC-контактів. Ми відправляємо персональний реф-кіт кожному. Мета: 3–5 founding partners підписано.</p>
+    </div>
+    <div class="phase">
+      <div class="days">Дні 15–45</div>
+      <div class="ph">Activation + перший written-approved відгук</div>
+      <p>Квізи запущені. Перший депозит → тригер вітання + запит на відгук. 8–10 реальних відгуків до Дня 45 — головний актив для Рівня 2.</p>
+    </div>
+  </div>
+
+  <div class="grid c3">
+    <div class="stat"><b>3–5</b><span>founding partners до Дня 14</span></div>
+    <div class="stat"><b>$0</b><span>кеш-кост Рівня 1</span></div>
+    <div class="stat"><b>8–10</b><span>written-approved відгуків до Дня 45</span></div>
+  </div>
+</section>
+
+<section class="section" id="level15">
+  <span class="eyebrow"><span class="dot"></span>23 · Рівень 1.5: Guerrilla без бюджету</span>
+  <h2>Reddit, FB/LinkedIn-групи, CASL-пошта та LinkedIn outbound</h2>
+  <p class="lead">Guerrilla-канали — це компаундинг. Перший місяць ти лише даєш цінність і заробляєш довіру. На місяць 2–3 ця довіра конвертується в розмови. У закритому ринку 11 733 RCIC одна неетична дія знищує репутацію назавжди — тому ethical guardrails тут не побажання, а hard constraint.</p>
+
+  <div class="callout warn">
+    <span class="t">⚠️ Правило реального голосу — один акаунт, повне розкриття</span>
+    <p>Найефективніший підхід у регульованій ніші — один реальний акаунт від реальної людини з відкритим біо. Платформи (Reddit, LinkedIn) цінують справжній голос: реальна карма від корисних відповідей будує довіру, яку неможливо купити. У тісній спільноті 11 733 RCIC автентичність = головна конкурентна перевага. <strong>Альтернатива нижче: реальна practitioner-advocacy + обов'язкове розкриття зв'язку.</strong></p>
+  </div>
+
+  <h3>Reddit — конкретні саби, правила, тактики</h3>
+
+  <div class="callout dark">
+    <span class="t">Реальність RCIC на Reddit</span>
+    <p>Reddit для RCIC-ніші — <strong>thin</strong> на стороні практикуючих, але <strong>thick</strong> на стороні клієнтів. Практикуючі RCIC збираються переважно у LinkedIn, IMMeForum, ICN Club, RCIC Club (practitioner-gated). Reddit — точка входу через клієнтську сторону + поодинокі треди від RCIC про бізнес-питання. Стратегія: ми говоримо з позиції практики і системного мислення, НЕ як вендор.</p>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Саб</th>
+        <th>Аудиторія</th>
+        <th>Самопромо?</th>
+        <th>Тактика</th>
+        <th>Пріоритет</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>r/canadavisa</strong></td>
+        <td>~500K+ (переважно клієнти RCIC)</td>
+        <td>Заборонено прямо</td>
+        <td>Маркетинг-сторона як приватна особа пояснює ЧОМУ платна консультація з депозитом захищає клієнта від неякісного сервісу. Нуль згадки продукту. Ціль: довіра та карма.</td>
+        <td><span class="pill lime">T1</span></td>
+      </tr>
+      <tr>
+        <td><strong>r/ImmigrationCanada</strong></td>
+        <td>~100K–300K</td>
+        <td>Суворі модератори</td>
+        <td>Відповіді на запитання про intake, депозити, як обрати RCIC. Тільки клієнтська сторона, освітньо. Після 60+ днів RCIC-партнер може зробити AMA «I'm an RCIC, AMA about running a practice».</td>
+        <td><span class="pill lime">T1</span></td>
+      </tr>
+      <tr>
+        <td><strong>r/smallbusiness + r/Entrepreneur</strong></td>
+        <td>Широка, але є RCIC-практики</td>
+        <td>Часто дозволено в тижневих тредах</td>
+        <td>Play 4 — Show & Tell у feedback-тредах: «I built an intake quiz for immigration consultants — here's what happened». Methodology + failures. Disclose.</td>
+        <td><span class="pill lime">T2</span></td>
+      </tr>
+      <tr>
+        <td><strong>r/immigration</strong></td>
+        <td>Global</td>
+        <td>Дозволено з disclosure</td>
+        <td>Низький пріоритет. Тільки Canada-tagged треди. З повним розкриттям зв'язку.</td>
+        <td>T3</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="grid c2">
+    <div class="card">
+      <span class="ico">⏱️</span>
+      <h4>Warming — 2–4 тижні ДО будь-якої згадки</h4>
+      <ul class="clean">
+        <li>Один реальний акаунт від реальної людини з розкритим біо</li>
+        <li>100+ comment karma суто від корисних відповідей (без посилань)</li>
+        <li>Співвідношення link : comment → мінімум (1:20 на старті)</li>
+        <li>Перевірити karma/age gate кожного саба (часто 50–500 karma + 7–30 днів)</li>
+        <li>Ніколи не постити той самий URL в різних сабах</li>
+      </ul>
+    </div>
+    <div class="card">
+      <span class="ico">📝</span>
+      <h4>5 content plays (ранжовано по ROI)</h4>
+      <ul class="clean">
+        <li><strong>Play 1 (найвищий ROI):</strong> Helpful comments — відповіді по 3–5 абзаців на запитання про consultation fees, intake, вибір RCIC</li>
+        <li><strong>Play 2:</strong> Value-first text post — «I analyzed X intake flows across RCIC practices — here's what I found»</li>
+        <li><strong>Play 3:</strong> AMA через RCIC-партнера (з реальними credentials, координувати з модами)</li>
+        <li><strong>Play 4:</strong> Show & Tell / case study (анонімізовано, outcomes-honest, без success-гарантій)</li>
+        <li><strong>Play 5:</strong> Reddit Ads — тільки після валідації органіки, таргет по сабу</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="accent">
+    <h4>Правило розкриття (дотримуватись у кожному пості)</h4>
+    <p>«Full disclosure — I work on a tool for RCIC practices called LF BOSS. These tips work regardless of which tools you use.» Disclose в тому самому коментарі/пості, де є хоч натяк на продукт. Ніколи не після. Ніколи «окремим абзацем в кінці».</p>
+  </div>
+
+  <h3>Facebook / LinkedIn — practitioner-групи</h3>
+
+  <div class="grid c2">
+    <div class="card">
+      <span class="ico">🔒</span>
+      <h4>FB practitioner-групи (RCIC / Canadian immigration consultants)</h4>
+      <p>Practitioner-gated: вендор не зайде напряму. Стратегія: design-партнери (Svitlana + репи), що вже в цих групах, шарять власні результати. Ми вступаємо тільки в групи, де адміни дозволяють сервіс-провайдерів — і постимо value 2–3 тижні ДО будь-якої згадки продукту.</p>
+      <p>Пріоритетні групи: <strong>CAPIC IMMeForum (2 000+ RCIC), ICN Club, RCIC Club</strong> — голос практика компаундить, голос вендора відкидається.</p>
+    </div>
+    <div class="card">
+      <span class="ico">💼</span>
+      <h4>LinkedIn outbound — 100 коннектів/тиж</h4>
+      <p>Saved search: «RCIC» + Канада, фільтр по свіжих випускниках Queen's/Ashton (= 0–4 роки, ICP-ядро з <strong>~6 509</strong> профілів). Відкривашка: безкоштовний шаблон квіза або одна цифра-інсайт (напр. «RCIC, що беруть депозит до консультації, мають на 40% менше no-show») — БЕЗ пітча платформи у першому повідомленні.</p>
+      <p>Маркетинг-сторона органічно: 2×/тиж пост «математика платна vs безкоштовна консультація» — БЕЗ згадки продукту в перших 3 постах. Рахуй: реакції → profile views → DM-запити.</p>
+    </div>
+  </div>
+
+  <h3>CASL-пошта з реєстру CICC</h3>
+
+  <div class="grid c3">
+    <div class="stat"><b>11 733</b><span>RCIC у Канаді (публічний реєстр)</span></div>
+    <div class="stat"><b>~3 500–4 500</b><span>email-досяжних (~30–40%)</span></div>
+    <div class="stat"><b>50/день</b><span>максимум (Instantly/Lemlist, warm IP)</span></div>
+  </div>
+
+  <div class="grid c2">
+    <div class="card">
+      <span class="ico">⚙️</span>
+      <h4>Технічний стек</h4>
+      <ul class="clean">
+        <li>Playwright-скрейп публічного реєстру CICC (легально, публічні дані) → CSV</li>
+        <li>Збагачення: Hunter.io / Apollo (~$50–100 one-time)</li>
+        <li>Розсилка: Instantly або Lemlist (~$50–100/міс)</li>
+        <li>3-touch sequence: День 1 (value), День 5 (кейс), День 10 (CTA)</li>
+        <li>Окремий прогрітий домен (не основний lfboss.com)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <span class="ico">⚖️</span>
+      <h4>CASL-гігієна (обов'язкова)</h4>
+      <ul class="clean">
+        <li>Ім'я + посада + назва компанії + провінція відправника</li>
+        <li>Фізична адреса або P.O. Box</li>
+        <li>Unsubscribe-посилання — виконати протягом 10 бізнес-днів</li>
+        <li>Підстава: implied consent (публічний реєстр = business context)</li>
+        <li>Зберігати consent-записи мінімум 3 роки</li>
+        <li>НЕ купувати email-списки (порушення CASL §6)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="t">Приклад першого листа (структура)</span>
+    <p><strong>Тема:</strong> [Ім'я], як ви зараз берете депозит до першої консультації?<br><br>
+    «Я помітив, що RCIC, що беруть невеликий депозит (~$30–40 CAD, суму встановлюєте ви) перед першим дзвінком, скорочують no-show майже вдвічі. Прикладаю один шаблон intake-квіза під Express Entry, який ми зробили для практикуючих RCIC — без підпису ретейнера депозит вже падає на рахунок.<br><br>
+    Якщо цікаво — налаштую під вашу нішу за 48 годин, безкоштовно.<br><br>
+    [Ім'я], LF BOSS · lf boss.com<br>
+    [Адреса] · Unsubscribe: [link]»</p>
+  </div>
+
+  <h3>Ethical guardrails — повна таблиця</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Дозволено</th>
+        <th>Заборонено (бан + legal)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Один реальний акаунт з розкритим біо</td>
+        <td>Анонімні акаунти без розкриття зв'язку, паралельне сіяння без disclosure</td>
+      </tr>
+      <tr>
+        <td>«I work on LF BOSS — ось як це розв'язує проблему»</td>
+        <td>Поза як «нейтральний happy user» без розкриття зв'язку</td>
+      </tr>
+      <tr>
+        <td>Зароблена карма від реальної допомоги</td>
+        <td>Куплена карма / upvote rings</td>
+      </tr>
+      <tr>
+        <td>Реальні результати з написаним дозволом (CICC §45)</td>
+        <td>Відгуки без письмового дозволу / гарантії по кейсах</td>
+      </tr>
+      <tr>
+        <td>Disclosure в тому самому пості де є згадка продукту</td>
+        <td>Disclosure «десь у профілі» або пост → disclosure окремим коментарем</td>
+      </tr>
+      <tr>
+        <td>Відповідати на запитання де продукт НЕ є відповіддю</td>
+        <td>Вставляти згадку продукту у непов'язані треди</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout warn">
+    <span class="t">Practitioner-advocacy: як зробити правильно</span>
+    <p>Найкраща «партизанська» тактика — це коли Svitlana або інший founding partner самостійно пише у своїй групі: «Я почала брати депозит до першої консультації через intake-квіз — ось що змінилося». Ми НЕ просимо конкретних формулювань, НЕ пишемо за них. Вони говорять своїми словами — лише з нашим written-approval продукту. Різниця: реальний практик = credibility; вендор = spam.</p>
+  </div>
+
+  <div class="timeline">
+    <div class="phase">
+      <div class="days">Тижні 1–2</div>
+      <div class="ph">Account warming (Reddit) + LinkedIn список</div>
+      <p>Реєстрація акаунту з реальним біо. 100+ karma від корисних коментарів (НУЛЬ посилань). Playwright-скрейп реєстру CICC. Hunter.io збагачення. LinkedIn saved search готовий.</p>
+    </div>
+    <div class="phase">
+      <div class="days">Тижні 3–4</div>
+      <div class="ph">Перші value-posts + LinkedIn outbound старт</div>
+      <p>Перший value-text post на Reddit (без продукту). LinkedIn: 100 коннектів/тиж value-first. CASL-пошта: перша хвиля 50/день з шаблоном квіза як value-asset.</p>
+    </div>
+    <div class="phase">
+      <div class="days">Місяць 2</div>
+      <div class="ph">Practitioner-advocacy + перші DM-розмови</div>
+      <p>Founding partners органічно шарять у своїх групах. AMA від RCIC-партнера в r/ImmigrationCanada (якщо моди дозволять). Перші DM від CASL-пошти → 100–150 розмов.</p>
+    </div>
+    <div class="phase">
+      <div class="days">Місяць 3</div>
+      <div class="ph">Конверсія + Show & Tell кейс</div>
+      <p>Play 4: перший анонімізований кейс «[Ім'я], RCIC #XXXX, зібрав $X депозитів за 30 днів» — Reddit Show & Tell + LinkedIn + реф-кіт. Написаний дозвіл від RCIC до публікації (CICC §45).</p>
+    </div>
+  </div>
+
+  <div class="grid c3">
+    <div class="stat"><b>$0</b><span>рекламний бюджет Рівня 1.5</span></div>
+    <div class="stat"><b>100/тиж</b><span>LinkedIn outbound (value-first)</span></div>
+    <div class="stat"><b>50/день</b><span>CASL-пошта (promo-safe)</span></div>
+  </div>
+
+  <div class="callout dark">
+    <span class="t">Ключовий принцип Рівня 1.5</span>
+    <p>Тест перед кожним постом або листом: «Чи буде цей контент корисним навіть якщо я не згадаю продукт?» Якщо ні — не публікуй. Якщо так — публікуй, додай disclosure в тому самому місці. Перший клієнт приходить після 60 днів статусу «найкориснішої людини в кімнаті», не після першого пітча.</p>
+  </div>
+</section>
+
+<section class="section" id="level2">
+  <span class="eyebrow"><span class="dot"></span>24 · РІВЕНЬ 2 — ВЛАСНІ СОЦМЕРЕЖІ + ВІДЕО</span>
+  <h2>Власні канали: короткі + довгі відео → LinkedIn-машина</h2>
+  <p class="lead">Рівень 1 дає перших 12–16 платящих. Рівень 2 будує систему, що приводить наступні 50–100 <strong>самостійно</strong> — щоб лідген перестав залежати від теплих інтро. Ядро — <strong>відео</strong> + <strong>LinkedIn</strong> (єдина відкрита арена, де RCIC реально шукають ресурси; Reddit тонкий, FB-групи вендоро-закриті, новачки 0–4 роки активні з дня диплому).</p>
+
+  <div class="grid c3">
+    <div class="stat"><b>~6 000–7 000</b><span>RCIC-профілів у LinkedIn (Канада)</span></div>
+    <div class="stat"><b>3–5/тиж</b><span>коротких відео (нарізки з довгих)</span></div>
+    <div class="stat"><b>1 / 1–2 тиж</b><span>довге відео (YouTube how-to)</span></div>
+  </div>
+
+  <h3>Відео-ядро: короткі + довгі</h3>
+  <div class="grid c2">
+    <div class="card">
+      <span class="ico">⚡</span>
+      <h4>Короткі відео</h4>
+      <p>Reels / Shorts / TikTok / LinkedIn-native. <strong>20–45 сек</strong>, hook у першу секунду. Теми: болі RCIC, get-paid історії, «3 помилки нового консультанта», 30-сек квіз-демо. <strong>Нарізаються з довгих</strong>, не знімаються окремо — мінімум зусиль, максимум охоплення.</p>
+    </div>
+    <div class="card">
+      <span class="ico">🎬</span>
+      <h4>Довгі відео</h4>
+      <p>YouTube. Глибокий how-to: «як брати депозит за консультацію», «налаштовуємо intake-квіз за 10 хв», «скільки коштують безкоштовні консультації». <strong>1 на 1–2 тижні</strong>. Подвійна цінність: SEO (RCIC шукають на YouTube) + GEO (AI цитує транскрипти).</p>
+    </div>
+  </div>
+
+  <h3>LinkedIn — головний канал органіки</h3>
+  <div class="grid c2">
+    <div class="card">
+      <span class="ico">🎯</span>
+      <h4>Таргет: нові RCIC (0–4 роки)</h4>
+      <p>Saved search «RCIC» + Канада, ухил на випускників Queen's / Ashton. Це ~54% ринку (~6 509 осіб): нема incumbent-CRM, відкриті до нових тулів, головний біль — tire-kickers і безгрошові консультації.</p>
+    </div>
+    <div class="card">
+      <span class="ico">✉️</span>
+      <h4>Відкривашка — завжди value-first</h4>
+      <p>Перший коннект: безкоштовний шаблон RCIC Intake Quiz під їхню практику. <strong>Нуль пітчу платформи в першому повідомленні.</strong> «Ось шаблон, що допомагає збирати депозит до дзвінка — користуйся.» Відповідь → продовження.</p>
+    </div>
+    <div class="card">
+      <span class="ico">📝</span>
+      <h4>Пости: «Математика безкоштовної консультації»</h4>
+      <p>Перші 3 пости — <strong>без жодної згадки LF BOSS</strong>. Тільки проблема: «10 безкоштовних консультацій/тиж × 30 хв = 5 неоплачених годин = <strong>$500–750 втраченого білінгу/міс.</strong>» Пост 4+ — досвід партнерів, органічне згадування.</p>
+    </div>
+    <div class="card">
+      <span class="ico">🔄</span>
+      <h4>LinkedIn → Email: автосеквенс</h4>
+      <p>Коннект прийнято → пряме повідомлення (шаблон квіза) → 7 днів тиші → CASL-email з реєстру. LinkedIn «підігріває» ім'я: відгук у 2–3× вищий, ніж холодний лист без prior-exposure.</p>
+    </div>
+  </div>
+
+  <div class="accent">
+    <h4>Правило перших 30 днів: без продажу в постах і відео</h4>
+    <p>Перші 3–4 тижні контент — виключно проблема-аварені: «Tax on Free Consultations», «Чому депозит до дзвінка захищає клієнта (і вас)», «Що кажуть успішні RCIC про tire-kickers». Алгоритм виводить автора у мережу читача ПЕРЕД тим, як читач знає про продукт — це і є awareness 0→1→2. Рано продавати = спалити охоплення.</p>
+  </div>
+
+  <h3>Движок help-контенту + repurposing</h3>
+  <p>Одне <strong>довге відео = тиждень контенту</strong>. Знімаємо мало — публікуємо багато. Я задаю теми ядра — Svitlana/партнери знімають і нарізають, решта — переробка:</p>
+  <table>
+    <thead>
+      <tr><th>Ядро (1 раз)</th><th>Repurpose 1</th><th>Repurpose 2</th><th>Repurpose 3</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Довге відео «How RCIC Gets Paid Before the Call»</td>
+        <td>5–8 вертикальних нарізок → Shorts / Reels / TikTok</td>
+        <td>LinkedIn пост (ключовий інсайт + цифра)</td>
+        <td>SEO-стаття з транскрипту</td>
+      </tr>
+      <tr>
+        <td>«RCIC Tire-Kicker Calculator» (втрати від free-консультацій)</td>
+        <td>LinkedIn карусель (5 слайдів, математика)</td>
+        <td>Widget на сайт (engineering-as-marketing)</td>
+        <td>Onboarding email новим юзерам</td>
+      </tr>
+      <tr>
+        <td>Кейс: «[Svitlana], RCIC, зібрала $1 400 депозитів за 30 днів»</td>
+        <td>Відео-відгук (written-approved, реальне ім'я)</td>
+        <td>Testimonial-секція на сайті</td>
+        <td>Email sequence touch #3</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Коли і скільки реінвестити з першої виручки</h3>
+  <div class="grid c3">
+    <div class="card"><span class="ico">🔒</span><h4>До Дня 90 — мінімум витрат на контент</h4><p>Контент роблять партнери (Svitlana/партнери) за нашими темами — я задаю напрям. Тільки інструменти (~$300–500 за 90 днів). Жодної реклами, жодного платного фрілансера. Ціль — доказати клин, не витрачати.</p></div>
+    <div class="card"><span class="ico">📈</span><h4>День 90: Gate пройдено → реінвест</h4><p>Якщо активація ≥40% і free→paid ≥40%: <strong>30–40% виручки</strong> на монтажера коротких відео + SEO (1 стаття/2 тижні) + Sales Navigator. ~$200–250/міс.</p></div>
+    <div class="card"><span class="ico">🚀</span><h4>Стабільний traction → контент-оператор</h4><p>Частковий фрілансер (4–6 год/тиж): нарізає відео, готує ядра — я даю напрям, партнер виконує. Темп: 4 SEO/міс + 3–5 коротких + 1 довге/тиж. Органіка знижує CAC без реклами.</p></div>
+  </div>
+
+  <div class="callout warn">
+    <span class="t">Ризик</span>
+    <p>LinkedIn outbound ≠ автопілот. При ручному creep'і bandwidth маркетинг-сторони (2–3 год/день) вичерпується за 2 тижні. Чекліст перед стартом: шаблон відкривашки + saved search + щоденний ліміт зафіксований (50 коннектів/день, не «скільки вийде»).</p>
+  </div>
+
+  <div class="callout">
+    <span class="t">Місток у Рівень 3</span>
+    <p>Відео — не лише контент, а й <strong>сировина для UGC та платної реклами Рівня 3</strong>: найкращі органічні ролики стають рекламними креативами, а founding-партнери знімають свої версії. Спершу органіка валідує меседж — потім за нього платимо.</p>
+
+  </div>
+</section>
+
+<section class="section" id="level3">
+  <span class="eyebrow"><span class="dot"></span>25 · Рівень 3: Платна реклама + UGC + Партнерська мережа</span>
+  <h2>Масштаб без фундаменту = пожар грошей. Спочатку — докази, потім — газ.</h2>
+  <p class="lead">Рівень 3 — не стратегія старту. Це шар, який вмикається <strong>після валідації клина</strong> (Day 90 Gate). До того — нуль proof, нуль paid media, нуль vendor-tiers. Три рейки: <span class="pill lime">Платна реклама</span> <span class="pill lime">UGC-контент</span> <span class="pill lime">Партнерська мережа</span> — кожна має чіткий тригер і механіку.</p>
+
+  <!-- РЕЙКА 1: ПЛАТНА РЕКЛАМА -->
+  <h3>Рейка 1 — Платна реклама (вмикати ТІЛЬКИ після Gate)</h3>
+
+  <div class="callout warn">
+    <span class="t">⚠️ Рекламу — після Gate</span>
+    <p>Рівень 3 відкривається після валідації клина. Ринок <strong>11 994 RCIC</strong> — тісний, word-of-mouth швидкий. Органічний тraction і живі відгуки дають рекламі максимальну ефективність: перевірений меседж + теплий ринок = найнижчий CAC. Тригер: клин доведено → Gate пройдено.</p>
+  </div>
+
+  <h4>Тригер для запуску реклами (Day 90 Gate)</h4>
+  <div class="grid c3">
+    <div class="card">
+      <span class="ico">📊</span>
+      <h4>Активація ≥ 40%</h4>
+      <p>Не менше 40% зареєстрованих зробили перший квіз-депозит-інвойс цикл протягом 14 днів після реєстрації.</p>
+    </div>
+    <div class="card">
+      <span class="ico">💳</span>
+      <h4>Free → Paid ≥ 40%</h4>
+      <p>З дизайн-партнерів (безкоштовний доступ) конвертованих у платний план — не менше 40%. Значить: продукт сам себе продає.</p>
+    </div>
+    <div class="card">
+      <span class="ico">🔁</span>
+      <h4>Органічний реферал є</h4>
+      <p>Хоча б 2–3 user прийшли по реферальному посиланню від існуючого клієнта без жодного paid touchpoint.</p>
+    </div>
+  </div>
+
+  <h4>Канали і бюджет-логіка</h4>
+  <div class="grid c3">
+    <div class="card">
+      <span class="ico">💼</span>
+      <h4>LinkedIn Ads (пріоритет №1)</h4>
+      <p>Job title targeting: «Regulated Canadian Immigration Consultant», «RCIC», «Immigration Consultant». Lead Gen Form з ROI-калькулятором (збираємо email без виходу з LinkedIn). <strong>Старт: $500 CAD/міс</strong>, тест 2 creatives × 2 тижні → масштаб переможця. CPC у нішевих B2B ~$8–15 — рентабельно при ACV $700–900 CAD/рік.</p>
+    </div>
+    <div class="card">
+      <span class="ico">📱</span>
+      <h4>Meta (Instagram / Facebook)</h4>
+      <p>Таргет: Канада + RCIC-FB-групи (retargeting аудиторій). Формат: 15-сек відео-демо квіз→депозит→сповіщення. <strong>Вхід: $300 CAD/міс</strong>, Lookalike 1% від email-списку перших клієнтів. Не запускати, поки немає 50+ конвертованих юзерів для Lookalike.</p>
+    </div>
+    <div class="card">
+      <span class="ico">🔍</span>
+      <h4>Google Search (найпізніше)</h4>
+      <p>Intent-targeting: «RCIC intake software», «immigration consultant CRM», «how to charge for consultation». <strong>$200 CAD/міс тест</strong>. Органічний SEO має дати сигнал першим — платний search підсилює тільки ті терміни, де вже є органічний трафік.</p>
+    </div>
+  </div>
+
+  <div class="accent">
+    <div class="grid c2">
+      <div class="stat"><b>$500</b><span>старт LinkedIn (CAD/міс)</span></div>
+      <div class="stat"><b>$29/міс</b><span>fallback-тест тариф як landing offer у рекламі</span></div>
+    </div>
+  </div>
+
+  <h4>Що рекламувати — верхівка воронки</h4>
+  <div class="grid c2">
+    <div class="card">
+      <span class="ico">🎯</span>
+      <h4>Квіз-демо як вхід</h4>
+      <p>«Подивись, як RCIC у GTA отримав перший депозит за 48 годин — без cold call». Клік → live demo квіза → email-захоплення → 7-денний пробний доступ. <strong>НЕ «купи підписку»</strong> — вхід через цінність, trust → конверсія.</p>
+    </div>
+    <div class="card">
+      <span class="ico">🧮</span>
+      <h4>ROI-калькулятор</h4>
+      <p>«Скільки ти залишаєш на столі?» → 3 поля: кількість безкоштовних консультацій/тиж × середній hourly rate = X CAD/міс втраченого білінгу. Результат → soft CTA на demo. Збирає email для nurture-послідовності. Рекламується як standalone lead magnet.</p>
+    </div>
+  </div>
+
+  <!-- РЕЙКА 2: UGC -->
+  <h3>Рейка 2 — UGC-контент: довіра дешево</h3>
+  <p class="lead">RCIC-ринок купує по рекомендаціях. Колега-RCIC показав продукт → довіра в 10× вища за будь-яку рекламу. UGC = найдешевший asset у цьому ринку. Ціна продукції: $0. Цінність: не вимірюється.</p>
+
+  <div class="callout dark">
+    <span class="t">Чому UGC = головний інструмент у регульованій ніші</span>
+    <p>У тісній спільноті <strong>11 994 RCIC</strong> репутація = все. LinkedIn рекомендація від практикуючого RCIC важить більше, ніж $10K рекламного бюджету. Founding design partners — наш перший UGC-шар. Кожен з них знає 10–30 колег особисто.</p>
+  </div>
+
+  <h4>Механіка стимулювання UGC</h4>
+  <div class="grid c2">
+    <div class="card">
+      <span class="ico">🏅</span>
+      <h4>Founding Partner Badge</h4>
+      <p>Перші 20 юзерів отримують <strong>«LF BOSS Founding Partner»</strong> бейдж для LinkedIn профілю + письмовий compliant відгук (форма written-approval, CICC §45 compliant). Бейдж = статус, не оплата. Мотивує публічне підтвердження: реальний досвід → максимальна довіра в спільноті.</p>
+    </div>
+    <div class="card">
+      <span class="ico">🎥</span>
+      <h4>Відео-кейси (Loom)</h4>
+      <p>Запитуємо 3–5 активних юзерів зняти 60–90-сек Loom: «покажи свій workflow до і після». Надаємо: шаблон питань, брендований thumbnail-темплейт, письмовий дозвіл. Розміщуємо на сайті з повним ім'ям + CICC номером реєстрації = максимальна довіра.</p>
+    </div>
+    <div class="card">
+      <span class="ico">💬</span>
+      <h4>LinkedIn нативні пости</h4>
+      <p>Партнерам пропонуємо шаблон поста (вони адаптують своїм голосом): «Запровадив депозит-квіз. Перший тиждень — нуль tire-kickers. Ось що змінилось». Ніяких forced scripts — тільки особистий досвід своїм голосом.</p>
+    </div>
+    <div class="card">
+      <span class="ico">🔗</span>
+      <h4>Реферальний цикл</h4>
+      <p>Кожен активний юзер отримує персональне реферальне посилання (Stripe affiliate або власний tracking). <strong>20–25% recurring</strong> від ретейнера рефералу. Перша виплата — після 30 днів активної оплати реферала. Прозоро через Stripe Connect.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="t">Інсайт: один правильний RCIC UGC → 10+ органічних лідів</span>
+    <p>LinkedIn post від практикуючого RCIC з 500+ followers (типовий профіль) → органічне охоплення 2 000–8 000 у вертикалі. CPL з UGC ≈ $0 проти $25–60 у paid. Завдання першого місяця: знайти 3 «connector RCIC» серед founding partners і вивести їх на перший пост.</p>
+  </div>
+
+  <!-- РЕЙКА 3: ПАРТНЕРСЬКА МЕРЕЖА -->
+  <h3>Рейка 3 — Партнерська і Vendor-мережа</h3>
+
+  <div class="grid c2">
+    <div class="card">
+      <span class="ico">🎓</span>
+      <h4>Едукатор-партнери (апсайд)</h4>
+      <p><strong>Parsai Immigration / CAPIC / Queen's Certificate Program</strong> — навчають нових RCIC. Домовленість: LF BOSS входить у «рекомендовані інструменти» для випускників. Модель: <strong>revenue share 15% з кожного студента</strong>, що стає платним юзером. Ядро ICP = новачки 0–4 роки (~<strong>6 509 осіб</strong>). Переговори: після Gate, з доказами конверсії.</p>
+    </div>
+    <div class="card">
+      <span class="ico">🔌</span>
+      <h4>Vendor / інтеграції — доповнюємо, не конкуруємо</h4>
+      <p>Officio, Maple, Docketwise — вони не наші конкуренти на front-of-funnel. Потенційна інтеграція: LF BOSS кваліфікує лідів → передає до Officio на case management. Пропозиція до Officio: «ваші клієнти отримують більше платящих лідів, ми не торкаємо case mgmt». Co-marketing = взаємовигідно. Таймінг: Q3 після proof of concept.</p>
+    </div>
+  </div>
+
+  <h4>Афіліатна модель — деталі</h4>
+  <div class="ladder">
+    <div class="rung">
+      <div class="lvl">Tier 1</div>
+      <div>
+        <strong>RCIC Афіліат</strong> — практикуючий консультант або ментор у спільноті. Комісія: <strong>20% recurring</strong> з кожного прямого реферала-клієнта. Виплата: щомісяця після 30-денного утримання. Вимога: особисте використання продукту (credibility). Перший набір: <strong>максимум 10 осіб</strong> — якість понад кількість.
+      </div>
+    </div>
+    <div class="rung">
+      <div class="lvl">Tier 2</div>
+      <div>
+        <strong>Community Connector</strong> — адміни RCIC Facebook/LinkedIn груп, newsletter власники. Комісія: <strong>25% recurring</strong> (вища аудиторія = вищий rate). Обов'язковий disclosure «афіліат LF BOSS» у будь-якому контенті. Таймінг: Tier 2 тільки після 5 активних Tier 1 із підтвердженими рефералами.
+      </div>
+    </div>
+    <div class="rung">
+      <div class="lvl">Едукатор</div>
+      <div>
+        <strong>Program Partner</strong> — Parsai/CAPIC/Queen's. Окрема модель: <strong>15% one-time</strong> з першого оплаченого місяця студента або <strong>10% recurring × 12 міс</strong> — вибір за партнером. Пряма домовленість між програмою і LF BOSS. Чиста двостороння структура — без sub-affiliate chains.
+      </div>
+    </div>
+  </div>
+
+  <div class="callout warn">
+    <span class="t">Правило афіліатної структури — прямі реферали клієнтів</span>
+    <p>Ми будуємо чисту, прозору модель: <strong>комісія тільки за прямі реферали кінцевих клієнтів</strong> — ніякої комісії за рекрутинг афіліатів. Це відповідає кращим практикам реклами в регульованій ніші і будує довіру в спільноті RCIC. Два рівні (Tier 1 + Tier 2) — чистий дворівневий реферал, де кожен отримує винагороду за клієнтів, яких він особисто привів. Перед запуском — короткий юридичний review структури (≈ 1 год з Canadian lawyer) для фінального підтвердження відповідності.</p>
+  </div>
+
+  <div class="accent">
+    <p><strong>Головний принцип Рівня 3:</strong> UGC і органічна мережа будуються з Дня 1 без бюджету. Платна реклама і партнерські угоди — тільки після Gate з живими доказами. Тісний ринок <strong>11 994 RCIC</strong> в одному LinkedIn-просторі: репутація, побудована на реальних результатах, стає найпотужнішим активом для масштабу.</p>
+  </div>
+</section>
+
+<section class="section" id="replication">
+  <span class="eyebrow"><span class="dot"></span>26 · Двигун реплікації — вихід на нові групи</span>
+  <h2>Один доведений цикл — <strong>нескінченні групи</strong></h2>
+  <p class="lead">Перші платящі — це не фініш, а <strong>прес-форма</strong>. Ми не виграємо ринок 11 994 одним великим запуском. Ми відпрацьовуємо одну теплу групу до перших грошей, запаковуємо весь цикл у шаблон, де змінюються лише <strong>три речі</strong> — група, партнер, біль — і котимо ту саму схему на групу №2, №3, №N. Це bowling-pin Мура (Crossing the Chasm): кожна кегля збиває наступну референсами, а не бюджетом.</p>
+
+  <div class="grid c3">
+    <div class="card">
+      <span class="ico">🎯</span>
+      <h4>1 · Відпрацювати теплу групу №1</h4>
+      <p>Svitlana як англомовний RCIC-конектор + база теплих репів. Доводимо цикл квіз→депозит→ретейнер до перших платящих RCIC і <strong>2–3 written-approved відгуків</strong>. Тут не масштаб — тут доказ, що схема працює руками.</p>
+    </div>
+    <div class="card">
+      <span class="ico">📦</span>
+      <h4>2 · Запакувати в ШАБЛОН</h4>
+      <p>Картка + QR + скрипт. Реальні ассети вже готові — <strong>3 варіанти карток</strong>, своп на нову групу = <strong>3 зміни</strong> (група, партнер, біль). Перший раз будували тиждень. Кожна наступна група — година.</p>
+    </div>
+    <div class="card">
+      <span class="ico">🎳</span>
+      <h4>3 · Котити на №2, №3, №N</h4>
+      <p>Інші RCIC-кола через інтро → ширші групи реєстру й саби → потім <strong>інша вертикаль</strong> (напр. construction). Продукт мульти-вертикальний: квіз→депозит→ретейнер працює всюди, де є «безкоштовні консультації». Кожна група дешевша, бо схема вже доведена.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="t">Чому шаблон, а не «новий запуск»</span>
+    <p>Своп — це не переписування. Беремо доведену картку, міняємо ім'я групи, фото партнера й формулювання болю — і той самий цикл, що приніс перші гроші в групі №1, працює в групі №2 з першого дня. Три зміни замість тижня роботи.</p>
+  </div>
+
+  <h3 style="margin-top:42px">Карта реплікації — група → біль → партнер → канал → ассет</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Група</th>
+        <th>Гострий біль (свопаємо)</th>
+        <th>Теплий партнер</th>
+        <th>Канал входу</th>
+        <th>Готовий ассет</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>№1 · Тепла база через Svitlana</strong><br><span class="pill lime">база зараз</span></td>
+        <td>Tire-kickers крадуть час, депозит беруть пізно або ніколи</td>
+        <td>Svitlana Asadchykh (англомовний RCIC-конектор) + теплі репи</td>
+        <td>Інтро 1:1 англійською до колег з реєстру CICC</td>
+        <td>Картка v1 + QR + скрипт (доведено)</td>
+      </tr>
+      <tr>
+        <td><strong>№2 · Ширше коло RCIC через founding partners №1</strong></td>
+        <td>Те саме ядро болю, нова група контактів</td>
+        <td>Інтро від founding partners №1</td>
+        <td>Реферал усередині RCIC-кола</td>
+        <td>Картка v2 (своп: група+партнер+біль)</td>
+      </tr>
+      <tr>
+        <td><strong>№3 · Ширші RCIC-кола / нові випускники</strong></td>
+        <td>Excel-хаос, ручний догон, 0–4 роки досвіду</td>
+        <td>Ментори Queen's/Ashton, CAPIC-голоси</td>
+        <td>Со-вебінар + LinkedIn saved search</td>
+        <td>Картка v3 + вебінар-дек (готовий)</td>
+      </tr>
+      <tr>
+        <td><strong>№N · Інша вертикаль (construction тощо)</strong></td>
+        <td>Безкоштовні оцінки/візити крадуть час до контракту</td>
+        <td>Новий інсайдер вертикалі</td>
+        <td>Асоціація / нішевий чат вертикалі</td>
+        <td>Той самий шаблон, нова обкладинка</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout warn">
+    <span class="t">Незмінне ядро vs. те, що свопаємо</span>
+    <p><strong>Незмінне:</strong> цикл квіз→депозит→ретейнер-інвойс→авто-догон, картка-формат, QR, структура скрипту, KPI-ворота. <strong>Свопаємо лише 3:</strong> назву групи, фото/ім'я партнера, формулювання болю. Усе інше — copy-paste доведеного активу.</p>
+  </div>
+
+  <h3 style="margin-top:42px">Метрики реплікації — крива, що падає</h3>
+  <p>Головний сигнал, що двигун працює: <strong>час до першого платящого на кожній наступній групі коротшає</strong>, а вартість входу падає. Перша група — найдорожча (будуємо шаблон з нуля). Кожна наступна спирається на готові ассети + соц-пруф попередньої.</p>
+
+  <div class="grid c4">
+    <div class="stat"><b>~6 тиж</b><span>Група №1 — час до першого платящого (будуємо все)</span></div>
+    <div class="stat"><b>~3 тиж</b><span>Група №2 — своп шаблону, тепле інтро від №1</span></div>
+    <div class="stat"><b>~2 тиж</b><span>Група №3 — соц-пруф + вебінар-дек готові</span></div>
+    <div class="stat"><b>↓ кожен раз</b><span>Вартість входу на групу падає з кожною кеглею</span></div>
+  </div>
+
+  <table style="margin-top:24px">
+    <thead>
+      <tr>
+        <th>Метрика реплікації</th>
+        <th>Що міряємо</th>
+        <th>Здоровий тренд</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Time-to-first-payer</strong></td>
+        <td>Дні від входу в групу до першого зібраного депозиту</td>
+        <td>Падає №1 → №N</td>
+      </tr>
+      <tr>
+        <td><strong>Cost-to-enter</strong></td>
+        <td>Мої години + кеш на запуск групи</td>
+        <td>Падає (своп = 3 зміни)</td>
+      </tr>
+      <tr>
+        <td><strong>Referral-ratio</strong></td>
+        <td>% нових юзерів через інтро попередньої групи</td>
+        <td>Росте (word-of-mouth усередині)</td>
+      </tr>
+      <tr>
+        <td><strong>Assets-reuse</strong></td>
+        <td>% активу, що переноситься без переробки</td>
+        <td>Прямує до ~90%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="accent">
+    <h4>Один доведений цикл → нескінченні групи</h4>
+    <p>Ми не масштабуємо рекламу — ми <strong>тиражуємо доведений шаблон</strong>. Як тільки група №1 дає перших платящих і 2–3 відгуки, кожна наступна група — це 3 зміни в картці й одне тепле інтро. Та сама прес-форма, нова обкладинка. Саме так big fish дешево захоплює один small pond за іншим — спершу тепла RCIC-база через Svitlana, потім ширший реєстр, потім сусідні вертикалі. Фокус-bandwidth 2–3 год/день вистачає, бо кожна нова кегля коштує дедалі менше зусиль, а не більше.</p>
+  </div>
+</section>
+
+<section class="section" id="seo">
+  <span class="eyebrow"><span class="dot"></span>27 · SEO/GEO Фундамент</span>
+  <h2>Моат, що будується повільно і який конкуренти не можуть скопіювати</h2>
+  <p class="lead">Officio і Maple керують ринком 10+ років — і жоден не інвестує у контент під болі RCIC. Органічний gap реальний. <strong>Контент-моат LF BOSS = SEO-статті під конкретні pain-aware запити + GEO-оптимізація під AI-пошук</strong>. RCIC гуглять «який найкращий CRM» і питають у ChatGPT / Perplexity — бути відповіддю в обох місцях.</p>
+
+  <div class="grid c3">
+    <div class="stat"><b>5</b><span>keyword-кластери під RCIC ICP</span></div>
+    <div class="stat"><b>very low</b><span>складність інформаційних кластерів (нуль авторитетного контенту)</span></div>
+    <div class="stat"><b>low-medium</b><span>складність комерційного кластера «Officio alternative»</span></div>
+  </div>
+
+  <h3>Hub/Spoke архітектура</h3>
+  <p><strong>Hub:</strong> <code>/rcic</code> — «RCIC Practice Growth Hub» (головна сторінка-пілар, 3 000–4 000 слів). Відповідає на питання «як я, RCIC, побудую ефективну практику і почну отримувати гроші». Лінкується на всі spoke-сторінки. Spoke-сторінки лінкуються назад у hub і одна на одну.</p>
+
+  <h3>Keyword-кластери — таблиця пріоритетів</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Кластер</th>
+        <th>Ключові запити</th>
+        <th>Search Intent</th>
+        <th>Awareness рівень</th>
+        <th>Складність</th>
+        <th>Пріоритет</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>1. Client intake &amp; payment</strong></td>
+        <td>«rcic client intake form», «immigration consultant intake quiz», «how to collect deposit before consultation rcic», «paid consultation immigration canada»</td>
+        <td>Informational + Problem-aware</td>
+        <td>1–2</td>
+        <td>Very low (нуль авторитетного контенту)</td>
+        <td>🔴 #1</td>
+      </tr>
+      <tr>
+        <td><strong>2. Getting paid / tire-kickers</strong></td>
+        <td>«rcic stop free consultations», «immigration consultant tire kicker», «how to get paid before discovery call canada», «rcic consultation fee deposit»</td>
+        <td>Problem-aware (пишуть зі злості на Reddit)</td>
+        <td>1–2</td>
+        <td>Very low</td>
+        <td>🔴 #2</td>
+      </tr>
+      <tr>
+        <td><strong>3. RCIC practice management software</strong></td>
+        <td>«officio alternative rcic», «best crm for rcic canada», «rcic practice management software», «immigration consultant crm canada»</td>
+        <td>Commercial investigation</td>
+        <td>2–3</td>
+        <td>Low-medium (Officio має domain authority)</td>
+        <td>🟡 #3</td>
+      </tr>
+      <tr>
+        <td><strong>4. Compliance &amp; trust accounting</strong></td>
+        <td>«rcic trust account rules», «cicc code advertising requirements», «rcic consultation fee vs retainer», «rcic stripe payments compliant»</td>
+        <td>Informational (trust-building)</td>
+        <td>1–2</td>
+        <td>Low (CICC сайт є, але не оптимізований під практичні запити)</td>
+        <td>🟡 #4</td>
+      </tr>
+      <tr>
+        <td><strong>5. Starting/growing RCIC practice</strong></td>
+        <td>«how to start rcic practice canada», «rcic business setup», «new rcic practice management», «rcic solo practice tips»</td>
+        <td>Informational (co-citation з Queen's/Ashton/Parsai)</td>
+        <td>0–1</td>
+        <td>Low (контент є, але мало практично-орієнтованого)</td>
+        <td>🟢 #5 (довга гра)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="accent">
+    <h4>Стратегічна ставка: ніхто не пише під «RCIC + get paid»</h4>
+    <p>Кластер 1 + 2 = найгостріший біль RCIC (cash flow / tire-kickers, підтверджено Reddit verbatim) + нуль авторитетного контенту. Перша стаття, що реально відповідає на «how to collect deposit before consultation RCIC», захоплює featured snippet і AI citation відразу — без backlinks, без authority. Перевага першого контенту.</p>
+  </div>
+
+  <h3>GEO / AI Citation — RCIC питають ChatGPT і Perplexity</h3>
+  <p>Зростаюча частина RCIC 0–4 роки шукає «який CRM найкращий» не в Google — а в ChatGPT / Perplexity. AI-пошук витягує факти з добре структурованих сторінок, що мають:</p>
+
+  <div class="grid c2">
+    <div class="card">
+      <span class="ico">❓</span>
+      <h4>Q&A формат і passage-level citability</h4>
+      <p>Кожна стаття має розділ «Frequently Asked Questions» з конкретними питаннями і відповідями в 1–3 реченнях. AI-моделі лайкають точні, цитабельні passage — не загальні абзаци. Приклад: «What is the best CRM for RCIC in Canada? → LF BOSS is purpose-built for RCIC front-of-funnel: intake quiz, consultation deposit, and retainer invoicing in one flow.»</p>
+    </div>
+    <div class="card">
+      <span class="ico">🏷️</span>
+      <h4>Entity clarity + FAQ schema</h4>
+      <p>Явне визначення: «LF BOSS = RCIC intake + consultation payment + retainer invoicing platform for Canadian immigration consultants.» Додати FAQ schema markup (JSON-LD) на /rcic hub і на кожну spoke-сторінку — це дає eligibility для AI Overviews і Perplexity-цитувань.</p>
+    </div>
+    <div class="card">
+      <span class="ico">🔗</span>
+      <h4>Co-citation play з Parsai / Queen's / Ashton</h4>
+      <p>Контент, що лінкується на settler.ca (Parsai), Queen's і Ashton — і на який вони потенційно лінкуються у відповідь — підвищує GEO credibility. Не конкуруємо з ними; ми доповнюємо: «Parsai навчає RCIC-праву, LF BOSS автоматизує їхній бізнес.»</p>
+    </div>
+    <div class="card">
+      <span class="ico">⚖️</span>
+      <h4>Compliance-контент = trust signal для AI</h4>
+      <p>Статті про CICC §44–46, CASL, trust-accounting показують AI-моделям, що LF BOSS розуміє регуляторне середовище. Параноїдальна аудиторія (RCIC = regulated profession) довіряє джерелу, що говорить мовою compliance, а не «hack your growth».</p>
+    </div>
+  </div>
+
+  <h3>5 Quick Wins (старт до Дня 30, нуль бюджету)</h3>
+  <ul class="check">
+    <li><strong>Стаття #1: «How RCIC Gets Paid Before the Discovery Call» (кластер 1+2)</strong> — 1 500–2 000 слів, математика «Tax on Free Consultations», FAQ schema, лінк на безкоштовний шаблон квіза. Опублікувати на /rcic/paid-consultation-intake. Мета: featured snippet на «how to collect deposit before consultation rcic».</li>
+    <li><strong>Publish /rcic Hub (пілар-сторінка)</strong> — «RCIC Practice Growth Hub»: огляд всіх 5 pain-тем, лінки на spoke-статті, CTA «Get free intake quiz template». Це якорна сторінка для internal linking і entry point для AI-цитувань.</li>
+    <li><strong>FAQ schema на /rcic і /rcic/paid-consultation-intake</strong> — 5–7 Q&A пар (JSON-LD), включно з «What is the best CRM for RCIC?» → LF BOSS відповідь. Реалізується за 30 хвилин, ефект в AI Overviews — протягом 2–4 тижнів після індексації.</li>
+    <li><strong>Compliance one-pager на сайті: «CICC §44–46 Compliant Marketing for RCIC»</strong> — не продаємо платформу, пишемо корисний ресурс під кластер 4. Перший контент у цій темі = instant credibility у регульованій аудиторії. Лінк дати Parsai/CAPIC при першому контакті.</li>
+    <li><strong>«Officio alternative for RCIC» порівняльна сторінка (кластер 3)</strong> — чесне порівняння: Officio = case management (після підписання ретейнера), LF BOSS = front-of-funnel get-paid (до підписання). «Офіціо веде ваші справи. LF BOSS їх наповнює.» Не атака — диференціація. Конверт intent = commercial investigation (готовий купувати).</li>
+  </ul>
+
+  <div class="timeline">
+    <div class="phase">
+      <div class="days">Дні 1–14</div>
+      <div class="ph">Foundation</div>
+      <p>Публікувати /rcic Hub + стаття #1 (intake/deposit). FAQ schema на обох. Ціль: індексація до Дня 21.</p>
+    </div>
+    <div class="phase">
+      <div class="days">Дні 15–45</div>
+      <div class="ph">Кластери 1–3</div>
+      <p>Стаття #2 (tire-kickers математика). Compliance one-pager (кластер 4). Officio-alternative сторінка (кластер 3). Репурпозинг у LinkedIn + email. Co-citation outreach до Parsai/Queen's.</p>
+    </div>
+    <div class="phase">
+      <div class="days">Дні 46–90</div>
+      <div class="ph">Кластер 5 + кейси</div>
+      <p>«Starting RCIC practice» гайд (довга гра, кластер 5). 2–3 реальних кейси з іменами/written-approval — вбудувати в SEO-статті як proof. Перевірити AI citation: питаємо ChatGPT/Perplexity «best CRM for RCIC Canada» — чи з'являємося?</p>
+    </div>
+    <div class="phase">
+      <div class="days">День 90+</div>
+      <div class="ph">Реінвест + масштаб</div>
+      <p>При Gate: 1 SEO-стаття / 2 тижні від фрілансера. Backlink outreach (immigration blogs, Parsai, ImmiMentor). Трек позицій у Ahrefs/Semrush. Мета 6 місяців: top-3 на «rcic intake quiz», «rcic consultation deposit».</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="t">Метрика SEO на День 90</span>
+    <p>Не позиція в Google (занадто повільно). Метрика: <strong>чи цитує ChatGPT / Perplexity LF BOSS при запиті «best RCIC CRM Canada»</strong> або «how to get paid before rcic consultation»? Це перевіряється вручну за 5 хвилин і показує чи контент потрапив у AI-knowledge base.</p>
+  </div>
+</section>
+
+<section class="section" id="team">
+  <span class="eyebrow"><span class="dot"></span>28 · РОЗПОДІЛ РОЛЕЙ — ВІДКРИТЕ ПИТАННЯ</span>
+  <h2>Хто що робить — поки відкрите питання</h2>
+  <p class="lead">Ролей наперед не фіксую і не беру забагато на себе. Розподіл — хто веде аутріч, хто контент, хто продукт-фікси — це відкрите питання, яке вирішуємо РАЗОМ із Vitaly по ходу, коли стане ясно хто що реально тягне. Vitaly та Svitlana — партнери в проєкті; конкретні зони відповідальності узгоджуємо разом, без жорстких призначень наперед.</p>
+
+  <div class="accent">
+    <h4>Відкриті питання для обговорення</h4>
+    <ul class="clean">
+      <li>Хто веде аутріч (email-послідовності, LinkedIn, теплі контакти)?</li>
+      <li>Хто відповідає за контент і соцмережі?</li>
+      <li>Як ділимо зони відповідальності між мною, Vitaly та Svitlana?</li>
+      <li>Хто веде продукт-фікси й технічні задачі?</li>
+      <li>Що автоматизуємо, а що лишаємо на людину — і чия це зона?</li>
+    </ul>
+    <p>Штату зараз не наймаємо. Сідаємо з Vitaly і розподіляємо ролі по ходу.</p>
+  </div>
+
+  <div class="callout">
+    <span class="t">Принцип фокус-bandwidth</span>
+    <p><strong>2–3 фокус-години/день</strong> — архітектурне рішення, не обмеження. Весь план будується на автоматизованому аутрічі + шаблонних квізах (48-год доставка) + LinkedIn-списках. Кожна задача понад 90 хв ручної роботи без шаблону — сигнал спростити або відкласти.</p>
+  </div>
+</section>
+
+<section class="section" id="risks">
+  <span class="eyebrow"><span class="dot"></span>29 · Що тримаємо в умі</span>
+  <h2>Що тримаємо в умі: моменти для узгодження разом</h2>
+  <p class="lead">RCIC — регульована й тісно зв'язана спільнота, де репутація і довіра працюють як головний актив. Це наша перевага: правильно зайшовши, ми будуємо ім'я, яке поширюється всередині спільноти органічно. Нижче — конструктивний чеклист «що узгодити на старті», щоб запуск був гладким.</p>
+
+  <div class="callout">
+    <span class="t">Перший крок: довести сайт і соціальний доказ до ладу</span>
+    <p>RCIC цінують прозорість — це їхній професійний стандарт. Тож стартова підготовка проста й приємна: оновити соціальний доказ на сайті — поставити реальні (consented) відгуки з written-approval замість поточних placeholder'ів — і витримати чисту email-гігієну (CASL). Це посилює довіру з першого дотику й робить кожен наступний outreach сильнішим. Працюємо за правилами реклами в ніші — і саме це будує нам репутацію.</p>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Момент</th>
+        <th>Пріоритет</th>
+        <th>Контекст</th>
+        <th>Як підходимо разом</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Соціальний доказ і email-гігієна</strong></td>
+        <td><span class="pill lime">Старт</span></td>
+        <td>RCIC цінують прозорість як професійний стандарт</td>
+        <td>Реальні (consented) відгуки замість placeholder'ів. Written-approval для всіх нових відгуків. Чиста CASL-гігієна. Compliance one-pager у шаблонах — як знак довіри.</td>
+      </tr>
+      <tr>
+        <td><strong>Доступ до practitioner-спільнот</strong></td>
+        <td><span class="pill lime">Високий</span></td>
+        <td>FB-групи й професійні кола заходять через довірені інтро</td>
+        <td>Підтвердити статус Svitlana в реєстрі CICC і узгодити інтро на старті партнерства. Входимо через партнерів, природно. Паралельно LinkedIn і CASL-email працюють як самостійна воронка — гнучкість гарантована.</td>
+      </tr>
+      <tr>
+        <td><strong>Платіжний flow і trust-accounting</strong></td>
+        <td><span class="pill lime">Узгодити</span></td>
+        <td>Досвідчені RCIC уважні до того, як рухаються кошти</td>
+        <td>Framing: «consultation fee earned on delivery». One-pager trust-accounting. Спираємось на практику immimentor.ca / canadaic.ca. За потреби — коротке юр-рев'ю з RCIC-спеціалістом перед скейлом.</td>
+      </tr>
+      <tr>
+        <td><strong>Позиціонування vs Maple/Officio</strong></td>
+        <td><span class="pill lime">Стратегія</span></td>
+        <td>ICP може порівнювати за ціною, а не за функцією</td>
+        <td>Не конкуруємо ціною — виграємо клином. Wedge: «Officio і Maple стартують ПІСЛЯ підписання ретейнера — front-of-funnel ніхто не закриває». ROI-якір: навіть один невеликий депозит ще до дзвінка окуповує LF BOSS. Якщо free→paid &lt;40% → тест $29/міс fallback.</td>
+      </tr>
+      <tr>
+        <td><strong>Фокус і bandwidth</strong></td>
+        <td><span class="pill lime">Операційно</span></td>
+        <td>Багато каналів одночасно без автоматизації</td>
+        <td>Email-аутріч 100% через Instantly (людина — лише відповідь на відклик). LinkedIn-списки готуємо batch заздалегідь. Вебінар — за шаблоном. Пріоритет каналів: LinkedIn → founding partners → решта.</td>
+      </tr>
+      <tr>
+        <td><strong>Stripe Connect — операційні деталі</strong></td>
+        <td><span class="pill lime">Узгодити</span></td>
+        <td>Chargeback-логіка на connected-акаунтах</td>
+        <td>Коротке юр-рев'ю Stripe Connect T&C перед скейлом (зона Vitaly). На старті (12–16 юзерів) обсяг малий. Зафіксувати письмово, хто покриває chargeback — звичайна операційна ясність.</td>
+      </tr>
+      <tr>
+        <td><strong>CASL — consent для розсилки</strong></td>
+        <td><span class="pill lime">Узгодити</span></td>
+        <td>Як коректно трактувати email із публічного реєстру CICC</td>
+        <td>Коротке юр-рев'ю implied consent перед масовою розсилкою (30-хв консультація). Чистіший шлях: перша хвиля — RCIC, чий email опубліковано на власному сайті/LinkedIn, або express consent через landing page.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="grid c2">
+    <div class="card">
+      <span class="ico">🤝</span>
+      <h4>Партнерська ясність по компенсації</h4>
+      <p>Щоб обом сторонам було комфортно рости, фіксуємо просту й прозору модель: <strong>% від Stripe gross revenue</strong> + read-only доступ до Stripe Dashboard, узгоджені письмово до старту роботи. Чиста, зрозуміла база, на якій легко масштабуватись разом.</p>
+    </div>
+    <div class="card">
+      <span class="ico">🔄</span>
+      <h4>Узгодження вертикалі продукту</h4>
+      <p>RCIC-клин — це стратегія дистрибуції, яку накладаємо на продукт. Узгоджуємо разом: (1) RCIC-narrowing на сайті; (2) хто веде roadmap; (3) хто ship'ить RCIC-шаблони. Коли це синхронізовано — маркетинг б'є точно в ціль.</p>
+    </div>
+  </div>
+
+  <div class="callout dark">
+    <span class="t">Системний принцип: довіра як двигун росту</span>
+    <p>У тісній RCIC-спільноті <strong>репутація компаундує</strong>: один кейс із реальним іменем і цифрою стає вірусним рефером усередині кола. Тому правильна підготовка на старті — оновлений соціальний доказ і чиста гігієна — це не бюрократія, а спосіб увійти так, щоб далі рости зі швидкістю. Зробити один раз правильно — і довіра працює на нас постійно.</p>
+  </div>
+</section>
+
+<div class="footer"><b>BH Agency</b> · для Vitaly · 19.06.2026</div></main></div>
+<script>
+document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{if(window.innerWidth<=900)document.querySelector('.nav').classList.remove('open');}));
+const links=[...document.querySelectorAll('.nav a')];
+const map={};links.forEach(l=>{const id=l.getAttribute('href').slice(1);const el=document.getElementById(id);if(el)map[id]=l;});
+const obs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('active'));const l=map[e.target.id];if(l){l.classList.add('active');}}});},{rootMargin:'-20% 0px -70% 0px'});
+Object.keys(map).forEach(id=>{const el=document.getElementById(id);if(el)obs.observe(el);});
+</script>
+</body>
+</html>
